@@ -1,88 +1,130 @@
-import PageTransition from "@/components/PageTransition";
-import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import profileImg from "@/assets/profile.jpg";
+import backgroundImg from "@/assets/background.jpeg";
+
+const navOptions = [
+  { to: "/cv", label: "CV" },
+  { to: "/research", label: "Current Research" },
+  { to: "/blog", label: "Bio" },
+  { to: "/contact", label: "Contact" },
+];
 
 const Index = () => {
   return (
-    <PageTransition>
-      {/* Hero — centered, minimal */}
-      <section className="min-h-[85vh] flex items-center justify-center">
-        <div className="max-w-3xl mx-auto px-6 text-center space-y-10">
-          <div className="space-y-6">
-            <h1 className="text-5xl md:text-7xl font-serif leading-[1.1] text-foreground tracking-tight">
-              Felipe Nathan<br />
-              <span className="text-muted-foreground">de Oliveira Lopes</span>
-            </h1>
-            <div className="w-16 h-px bg-primary mx-auto" />
-            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground">
-              Postdoctoral Researcher in Plasma Astrophysics
-            </p>
-            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground">
-              KU Leuven, Belgium
-            </p>
+    <div
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      style={{
+        backgroundImage: `url(${backgroundImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60 z-0" />
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-3xl">
+        {/* Circular profile photo */}
+        <motion.div
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mb-8"
+        >
+          <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-white/20 shadow-2xl">
+            <img
+              src={profileImg}
+              alt="Felipe Nathan de Oliveira Lopes"
+              className="w-full h-full object-cover object-top"
+            />
           </div>
+        </motion.div>
 
-          <p className="text-base text-muted-foreground max-w-lg mx-auto leading-relaxed">
-            Working at the intersection of plasma astrophysics, 
-            applied differential geometry, and machine learning.
-          </p>
+        {/* Divider */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="w-full max-w-lg h-px bg-white/30 mb-10"
+        />
 
-          <div className="flex justify-center gap-4">
+        {/* Name */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-4xl md:text-6xl font-serif tracking-[0.15em] uppercase text-white mb-6"
+        >
+          Felipe Nathan
+        </motion.h1>
+
+        {/* Taglines */}
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="text-sm md:text-base tracking-[0.25em] uppercase text-white/80 mb-4"
+        >
+          A Postdoctoral Researcher in Plasma Astrophysics at KU Leuven.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="text-sm md:text-base tracking-[0.25em] uppercase text-white/70 mb-4"
+        >
+          An oil painter and guitar enthusiast.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.0 }}
+          className="text-xs md:text-sm tracking-[0.2em] uppercase text-white/60 mb-12"
+        >
+          34 countries and counting. Working on a 5th and 6th language.
+        </motion.p>
+
+        {/* Divider */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 1.1 }}
+          className="w-full max-w-lg h-px bg-white/30 mb-16"
+        />
+
+        {/* Navigation options */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.3 }}
+          className="flex flex-wrap justify-center gap-0"
+        >
+          {navOptions.map((item, i) => (
             <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 text-xs tracking-[0.2em] uppercase hover:bg-primary/90 transition-colors"
+              key={item.to}
+              to={item.to}
+              className="border border-white/30 px-6 md:px-10 py-4 text-xs md:text-sm tracking-[0.3em] uppercase text-white/90 hover:bg-white/10 hover:text-white transition-all duration-300"
             >
-              Get in touch <ArrowRight size={12} />
+              {item.label}
             </Link>
-            <Link
-              to="/cv"
-              className="inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 text-xs tracking-[0.2em] uppercase hover:bg-secondary transition-colors"
-            >
-              View CV
-            </Link>
-          </div>
-        </div>
-      </section>
+          ))}
+        </motion.div>
+      </div>
 
-      {/* Research */}
-      <section className="border-t border-border/50">
-        <div className="max-w-3xl mx-auto px-6 py-24">
-          <p className="text-xs tracking-[0.3em] uppercase text-primary mb-12 text-center">Current Research</p>
-          <div className="space-y-16">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl font-serif text-foreground">HELIOSKILL</h2>
-              <p className="text-muted-foreground leading-relaxed max-w-xl mx-auto">
-                An FWO-funded project combining physically informed machine learning with space mission data 
-                and high-resolution simulations to investigate how energy is dissipated in collisionless systems.
-              </p>
-            </div>
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl font-serif text-foreground">Background</h2>
-              <p className="text-muted-foreground leading-relaxed max-w-xl mx-auto">
-                Ph.D. in physics from Ruhr-Universität Bochum. M.Sc. in theoretical physics from 
-                the University of Brasília. M.Eng. in nuclear sciences from the Polytechnic 
-                University of Catalonia. Previously at Max Planck Institute for Plasma Physics and 
-                Barcelona Supercomputing Center.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Interests */}
-      <section className="border-t border-border/50">
-        <div className="max-w-3xl mx-auto px-6 py-24 text-center">
-          <p className="text-xs tracking-[0.3em] uppercase text-primary mb-8">Beyond Research</p>
-          <p className="text-xl font-serif text-foreground max-w-xl mx-auto leading-relaxed">
-            Guitar, oil painting, Kandinsky-esque sketches, and travelling — 34 countries and counting. 
-            A language aficionado working on a 5th and 6th language.
-          </p>
-          <a href="https://goodreads.com" target="_blank" rel="noopener noreferrer" className="inline-block mt-6 text-xs tracking-[0.2em] uppercase text-primary hover:underline">
-            Follow my reading journey →
-          </a>
-        </div>
-      </section>
-    </PageTransition>
+      {/* Footer */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 1.5 }}
+        className="absolute bottom-6 z-10 text-xs tracking-[0.2em] uppercase text-white/40"
+      >
+        © {new Date().getFullYear()} Felipe Nathan de Oliveira Lopes
+      </motion.div>
+    </div>
   );
 };
 
