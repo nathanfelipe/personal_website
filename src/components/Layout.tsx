@@ -115,8 +115,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 20 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="w-full max-w-4xl mx-4 my-20 md:my-24 bg-black/75 backdrop-blur-sm border border-white/10 rounded-sm overflow-y-auto max-h-[85vh]"
+            className="relative w-full max-w-4xl mx-4 my-20 md:my-24 bg-black/65 backdrop-blur-xl border border-white/15 rounded-2xl overflow-y-auto max-h-[85vh] shadow-2xl"
           >
+            {/* macOS-style red close dot */}
+            <NavLink
+              to="/"
+              className="absolute top-4 left-4 z-20 w-3.5 h-3.5 rounded-full bg-red-500 hover:bg-red-400 transition-colors cursor-pointer shadow-md hover:shadow-red-500/40"
+              aria-label="Back to home"
+            />
             {children}
           </motion.div>
         )}

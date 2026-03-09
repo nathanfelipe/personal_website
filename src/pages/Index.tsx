@@ -79,7 +79,7 @@ const Index = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.1 }}
-        className="flex flex-wrap justify-center gap-0"
+        className="flex flex-wrap justify-center gap-3"
       >
         {navOptions.map((item) => (
           <Link
