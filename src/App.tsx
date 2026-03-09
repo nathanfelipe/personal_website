@@ -14,10 +14,6 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const WithLayout = ({ children }: { children: React.ReactNode }) => (
-  <Layout>{children}</Layout>
-);
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider defaultTheme="dark">
@@ -25,14 +21,16 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/cv" element={<WithLayout><CV /></WithLayout>} />
-            <Route path="/research" element={<WithLayout><Research /></WithLayout>} />
-            <Route path="/blog" element={<WithLayout><Blog /></WithLayout>} />
-            <Route path="/contact" element={<WithLayout><Contact /></WithLayout>} />
-            <Route path="*" element={<WithLayout><NotFound /></WithLayout>} />
-          </Routes>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/cv" element={<CV />} />
+              <Route path="/research" element={<Research />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>
