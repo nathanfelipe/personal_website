@@ -85,7 +85,7 @@ const Index = () => {
           <Link
             key={item.to}
             to={item.to}
-            className="border border-white/30 px-5 md:px-8 py-3 text-[10px] md:text-xs tracking-[0.25em] uppercase text-white/90 hover:bg-white/10 hover:text-white transition-all duration-300"
+            className="border border-white/30 rounded-xl px-5 md:px-8 py-3 text-[10px] md:text-xs tracking-[0.25em] uppercase text-white/90 hover:bg-white/10 hover:text-white transition-all duration-300"
           >
             {item.label}
           </Link>
