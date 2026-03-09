@@ -1,0 +1,110 @@
+import { NavLink } from "react-router-dom";
+import { cn } from "@/lib/utils";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const navItems = [
+  { to: "/", label: "Home" },
+  { to: "/cv", label: "CV" },
+  { to: "/blog", label: "Blog" },
+  { to: "/contact", label: "Contact" },
+];
+
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+        <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+          <NavLink to="/" className="font-serif text-xl tracking-wide text-foreground hover:text-primary transition-colors">
+            Nathan
+          </NavLink>
+
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                end={item.to === "/"}
+                className={({ isActive }) =>
+                  cn(
+                    "text-sm tracking-widest uppercase transition-colors duration-200",
+                    isActive
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-foreground"
+                  )
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
+
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden text-foreground p-2"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+
+        {/* Mobile menu */}
+        <AnimatePresence>
+          {mobileOpen && (
+            <motion.nav
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden overflow-hidden border-t border-border/50 bg-background/95 backdrop-blur-md"
+            >
+              <div className="px-6 py-4 flex flex-col gap-4">
+                {navItems.map((item) => (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    end={item.to === "/"}
+                    onClick={() => setMobileOpen(false)}
+                    className={({ isActive }) =>
+                      cn(
+                        "text-sm tracking-widest uppercase transition-colors",
+                        isActive ? "text-primary" : "text-muted-foreground"
+                      )
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                ))}
+              </div>
+            </motion.nav>
+          )}
+        </AnimatePresence>
+      </header>
+
+      {/* Main content */}
+      <main className="flex-1 pt-16">
+        {children}
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t border-border/50 py-8">
+        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+          <span>© {new Date().getFullYear()} Felipe Nathan de Oliveira Lopes</span>
+          <div className="flex items-center gap-6">
+            <a href="https://www.linkedin.com/in/nathan-de-oliveira/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a>
+            <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Scholar</a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">GitHub</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Layout;
