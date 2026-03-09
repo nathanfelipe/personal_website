@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "@/components/ThemeProvider";
 
 const navItems = [
   { to: "/", label: "Home" },
@@ -13,13 +14,14 @@ const navItems = [
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-          <NavLink to="/" className="font-serif text-xl tracking-wide text-foreground hover:text-primary transition-colors">
+          <NavLink to="/" className="font-serif text-xl tracking-[0.2em] uppercase text-foreground hover:text-primary transition-colors">
             Nathan
           </NavLink>
 
@@ -32,7 +34,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 end={item.to === "/"}
                 className={({ isActive }) =>
                   cn(
-                    "text-sm tracking-widest uppercase transition-colors duration-200",
+                    "text-xs tracking-[0.25em] uppercase transition-colors duration-200",
                     isActive
                       ? "text-primary"
                       : "text-muted-foreground hover:text-foreground"
@@ -42,16 +44,32 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 {item.label}
               </NavLink>
             ))}
+            <button
+              onClick={toggleTheme}
+              className="text-muted-foreground hover:text-foreground transition-colors p-1"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
           </nav>
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden text-foreground p-2"
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          {/* Mobile controls */}
+          <div className="md:hidden flex items-center gap-3">
+            <button
+              onClick={toggleTheme}
+              className="text-muted-foreground hover:text-foreground transition-colors p-1"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="text-foreground p-2"
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}
@@ -73,7 +91,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     onClick={() => setMobileOpen(false)}
                     className={({ isActive }) =>
                       cn(
-                        "text-sm tracking-widest uppercase transition-colors",
+                        "text-xs tracking-[0.25em] uppercase transition-colors",
                         isActive ? "text-primary" : "text-muted-foreground"
                       )
                     }
@@ -94,7 +112,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
       {/* Footer */}
       <footer className="border-t border-border/50 py-8">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs tracking-[0.15em] uppercase text-muted-foreground">
           <span>© {new Date().getFullYear()} Felipe Nathan de Oliveira Lopes</span>
           <div className="flex items-center gap-6">
             <a href="https://www.linkedin.com/in/nathan-de-oliveira/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a>
