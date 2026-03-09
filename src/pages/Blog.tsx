@@ -1,4 +1,4 @@
-import PageTransition from "@/components/PageTransition";
+import { motion } from "framer-motion";
 
 const posts = [
   {
@@ -22,40 +22,55 @@ const posts = [
   },
 ];
 
+const fadeIn = {
+  hidden: { opacity: 0, y: 15 },
+  visible: (i: number) => ({
+    opacity: 1, y: 0,
+    transition: { delay: i * 0.1, duration: 0.4 },
+  }),
+};
+
 const Blog = () => {
   return (
-    <PageTransition>
-      <div className="max-w-5xl mx-auto px-6 py-24">
-        <div className="space-y-4 mb-16">
-          <p className="text-sm tracking-widest uppercase text-primary">Bio & Blog</p>
-          <h1 className="text-5xl md:text-6xl font-serif text-foreground">
-            Personal view on delicate issues…
-          </h1>
-        </div>
-
-        <div className="space-y-0 divide-y divide-border/50">
-          {posts.map((post, i) => (
-            <article key={i} className="py-12 first:pt-0 last:pb-0">
-              <div className="space-y-4 max-w-2xl">
-                <time className="text-sm text-muted-foreground tracking-wide">{post.date}</time>
-                <h2 className="text-2xl md:text-3xl font-serif text-foreground">{post.title}</h2>
-                <p className="text-muted-foreground leading-relaxed">{post.excerpt}</p>
-                {post.link && (
-                  <a
-                    href={post.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block text-sm text-primary hover:underline tracking-wide"
-                  >
-                    Read more →
-                  </a>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
+    <div className="px-8 md:px-12 py-12 md:py-16">
+      <div className="space-y-3 mb-12">
+        <p className="text-xs tracking-[0.3em] uppercase text-white/50">Bio & Blog</p>
+        <div className="w-12 h-px bg-white/30" />
+        <h1 className="text-3xl md:text-4xl font-serif text-white">
+          Personal view on delicate issues…
+        </h1>
       </div>
-    </PageTransition>
+
+      <div className="space-y-0 divide-y divide-white/10">
+        {posts.map((post, i) => (
+          <motion.article
+            key={i}
+            custom={i}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="py-8 first:pt-0 last:pb-0"
+          >
+            <div className="space-y-3 max-w-2xl">
+              <time className="text-[10px] text-white/40 tracking-wide uppercase">{post.date}</time>
+              <h2 className="text-xl md:text-2xl font-serif text-white">{post.title}</h2>
+              <p className="text-sm text-white/60 leading-relaxed">{post.excerpt}</p>
+              {post.link && (
+                <a
+                  href={post.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-xs text-white/50 hover:text-white/80 tracking-wide transition-colors"
+                >
+                  Read more →
+                </a>
+              )}
+            </div>
+          </motion.article>
+        ))}
+      </div>
+    </div>
   );
 };
 
