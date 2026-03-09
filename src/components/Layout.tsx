@@ -8,7 +8,8 @@ import { useTheme } from "@/components/ThemeProvider";
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/cv", label: "CV" },
-  { to: "/blog", label: "Blog" },
+  { to: "/research", label: "Research" },
+  { to: "/blog", label: "Bio" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -18,14 +19,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
           <NavLink to="/" className="font-serif text-xl tracking-[0.2em] uppercase text-foreground hover:text-primary transition-colors">
             Nathan
           </NavLink>
 
-          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <NavLink
@@ -35,44 +34,28 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 className={({ isActive }) =>
                   cn(
                     "text-xs tracking-[0.25em] uppercase transition-colors duration-200",
-                    isActive
-                      ? "text-primary"
-                      : "text-muted-foreground hover:text-foreground"
+                    isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
                   )
                 }
               >
                 {item.label}
               </NavLink>
             ))}
-            <button
-              onClick={toggleTheme}
-              className="text-muted-foreground hover:text-foreground transition-colors p-1"
-              aria-label="Toggle theme"
-            >
+            <button onClick={toggleTheme} className="text-muted-foreground hover:text-foreground transition-colors p-1" aria-label="Toggle theme">
               {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
             </button>
           </nav>
 
-          {/* Mobile controls */}
           <div className="md:hidden flex items-center gap-3">
-            <button
-              onClick={toggleTheme}
-              className="text-muted-foreground hover:text-foreground transition-colors p-1"
-              aria-label="Toggle theme"
-            >
+            <button onClick={toggleTheme} className="text-muted-foreground hover:text-foreground transition-colors p-1" aria-label="Toggle theme">
               {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
             </button>
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="text-foreground p-2"
-              aria-label="Toggle menu"
-            >
+            <button onClick={() => setMobileOpen(!mobileOpen)} className="text-foreground p-2" aria-label="Toggle menu">
               {mobileOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile menu */}
         <AnimatePresence>
           {mobileOpen && (
             <motion.nav
@@ -105,12 +88,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </AnimatePresence>
       </header>
 
-      {/* Main content */}
-      <main className="flex-1 pt-16">
-        {children}
-      </main>
+      <main className="flex-1 pt-16">{children}</main>
 
-      {/* Footer */}
       <footer className="border-t border-border/50 py-8">
         <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs tracking-[0.15em] uppercase text-muted-foreground">
           <span>© {new Date().getFullYear()} Felipe Nathan de Oliveira Lopes</span>
