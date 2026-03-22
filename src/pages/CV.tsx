@@ -3,56 +3,50 @@ import { motion } from "framer-motion";
 
 const experience = [
   {
-    period: "2024 – 2026",
+    period: "2024 – Present",
     location: "Leuven, Belgium",
-    title: "co-PI of FWO project Helioskill",
-    org: "KU Leuven",
-    items: [
-      "Fully kinetic Particle in cell simulations",
-      "Working with solar wind in-situ data",
-      "Symbolic regression for equation of state for plasma",
-    ],
-  },
-  {
-    period: "2024 – 2026",
-    location: "Leuven, Belgium",
-    title: "Project manager of ASAP",
-    org: "KU Leuven",
-    items: [
-      "Development of algorithms for space-resilient hardware testbed",
-      "Management of the consortium including KU Leuven, INAF Rome, KTH, IngeniArs, UNICAL",
-    ],
-  },
-  {
-    period: "2024 – 2026",
-    location: "Leuven, Belgium",
-    title: "Marie Skłodowska-Curie fellow",
+    title: "Postdoctoral Researcher",
     org: "KU Leuven",
     orgLink: "https://www.kuleuven.be",
     items: [
-      "Project STRIDE - Moment closure through equation discovery and deep learning",
-      "Advising one master thesis and 2 master projects.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     ],
   },
   {
-    period: "2023 – 2024",
-    location: "Leuven, Belgium",
-    title: "Postdoctoral fellow",
-    org: "KU Leuven",
-    orgLink: "https://www.kuleuven.be",
+    period: "2017 – 2024",
+    location: "Germany",
+    title: "Research Experience",
+    org: "Max-Planck-Institut für Plasmaphysik (IPP)",
     items: [
-      "Predicting space weather events, solar activity, ionosphere etc",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     ],
   },
   {
-    period: "2010 – 2023",
-    location: "USA, Belgium, Georgia",
-    title: "Teaching",
+    period: "2016 – 2017",
+    location: "Spain",
+    title: "Research Experience",
+    org: "Barcelona Supercomputing Center",
     items: [
-      "co-supervised Philippine Rouby-Poizat's MSc thesis at ENS-Lyon 2021",
-      "supervised Remy Smets' MSc thesis at KU Leuven 2024",
-      "co-supervised Jan Van Rompaeay's MSc thesis at KU Leuven 2024",
-      "supervising Luka Vranckx's MSc thesis at KU Leuven 2025",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    ],
+  },
+  {
+    period: "2014 – 2015",
+    location: "Brazil",
+    title: "Research Experience",
+    org: "University of Brasília Plasma Physics Laboratory",
+    items: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    ],
+  },
+  {
+    period: "2011 – 2012",
+    location: "Brazil",
+    title: "Research Experience",
+    org: "Brazilian Space Agency",
+    items: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     ],
   },
 ];
