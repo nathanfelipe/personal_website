@@ -52,11 +52,11 @@ const experience = [
 ];
 
 const links = [
-  { label: "GitHub", url: "https://github.com", description: "Code repositories & projects" },
-  { label: "Google Scholar", url: "https://scholar.google.com", description: "Publication metrics & citations" },
-  { label: "ORCID", url: "https://orcid.org", description: "Researcher identifier" },
-  { label: "ResearchGate", url: "https://researchgate.net", description: "Research network profile" },
-  { label: "ResearcherID", url: "#", description: "Web of Science profile" },
+  { label: "GitHub", url: "https://github.com/nathanfelipe", description: "Code repositories & projects" },
+  { label: "Google Scholar", url: "https://scholar.google.es/citations?user=VXjKX2kAAAAJ&hl=en", description: "Publication metrics & citations" },
+  { label: "ORCID", url: "https://orcid.org/0000-0002-1290-2621", description: "Researcher identifier" },
+  { label: "ResearchGate", url: "https://www.researchgate.net/profile/Felipe-Nathan-De-Oliveira", description: "Research network profile" },
+  { label: "Web of Science", url: "https://www.webofscience.com/wos/author/record/E-9258-2016", description: "Web of Science profile" },
   { label: "LinkedIn", url: "https://www.linkedin.com/in/nathan-de-oliveira/", description: "Professional network" },
   { label: "Download Full CV (PDF)", url: "#", description: "Complete curriculum vitae" },
 ];
