@@ -3,66 +3,60 @@ import { motion } from "framer-motion";
 
 const experience = [
   {
-    period: "2024 – 2026",
+    period: "2024 – Present",
     location: "Leuven, Belgium",
-    title: "co-PI of FWO project Helioskill",
-    org: "KU Leuven",
-    items: [
-      "Fully kinetic Particle in cell simulations",
-      "Working with solar wind in-situ data",
-      "Symbolic regression for equation of state for plasma",
-    ],
-  },
-  {
-    period: "2024 – 2026",
-    location: "Leuven, Belgium",
-    title: "Project manager of ASAP",
-    org: "KU Leuven",
-    items: [
-      "Development of algorithms for space-resilient hardware testbed",
-      "Management of the consortium including KU Leuven, INAF Rome, KTH, IngeniArs, UNICAL",
-    ],
-  },
-  {
-    period: "2024 – 2026",
-    location: "Leuven, Belgium",
-    title: "Marie Skłodowska-Curie fellow",
+    title: "Postdoctoral Researcher",
     org: "KU Leuven",
     orgLink: "https://www.kuleuven.be",
     items: [
-      "Project STRIDE - Moment closure through equation discovery and deep learning",
-      "Advising one master thesis and 2 master projects.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     ],
   },
   {
-    period: "2023 – 2024",
-    location: "Leuven, Belgium",
-    title: "Postdoctoral fellow",
-    org: "KU Leuven",
-    orgLink: "https://www.kuleuven.be",
+    period: "2017 – 2024",
+    location: "Germany",
+    title: "Research Experience",
+    org: "Max-Planck-Institut für Plasmaphysik (IPP)",
     items: [
-      "Predicting space weather events, solar activity, ionosphere etc",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     ],
   },
   {
-    period: "2010 – 2023",
-    location: "USA, Belgium, Georgia",
-    title: "Teaching",
+    period: "2016 – 2017",
+    location: "Spain",
+    title: "Research Experience",
+    org: "Barcelona Supercomputing Center",
     items: [
-      "co-supervised Philippine Rouby-Poizat's MSc thesis at ENS-Lyon 2021",
-      "supervised Remy Smets' MSc thesis at KU Leuven 2024",
-      "co-supervised Jan Van Rompaeay's MSc thesis at KU Leuven 2024",
-      "supervising Luka Vranckx's MSc thesis at KU Leuven 2025",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    ],
+  },
+  {
+    period: "2014 – 2015",
+    location: "Brazil",
+    title: "Research Experience",
+    org: "University of Brasília Plasma Physics Laboratory",
+    items: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    ],
+  },
+  {
+    period: "2011 – 2012",
+    location: "Brazil",
+    title: "Research Experience",
+    org: "Brazilian Space Agency",
+    items: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     ],
   },
 ];
 
 const links = [
-  { label: "GitHub", url: "https://github.com", description: "Code repositories & projects" },
-  { label: "Google Scholar", url: "https://scholar.google.com", description: "Publication metrics & citations" },
-  { label: "ORCID", url: "https://orcid.org", description: "Researcher identifier" },
-  { label: "ResearchGate", url: "https://researchgate.net", description: "Research network profile" },
-  { label: "ResearcherID", url: "#", description: "Web of Science profile" },
+  { label: "GitHub", url: "https://github.com/nathanfelipe", description: "Code repositories & projects" },
+  { label: "Google Scholar", url: "https://scholar.google.es/citations?user=VXjKX2kAAAAJ&hl=en", description: "Publication metrics & citations" },
+  { label: "ORCID", url: "https://orcid.org/0000-0002-1290-2621", description: "Researcher identifier" },
+  { label: "ResearchGate", url: "https://www.researchgate.net/profile/Felipe-Nathan-De-Oliveira", description: "Research network profile" },
+  { label: "Web of Science", url: "https://www.webofscience.com/wos/author/record/E-9258-2016", description: "Web of Science profile" },
   { label: "LinkedIn", url: "https://www.linkedin.com/in/nathan-de-oliveira/", description: "Professional network" },
   { label: "Download Full CV (PDF)", url: "#", description: "Complete curriculum vitae" },
 ];
