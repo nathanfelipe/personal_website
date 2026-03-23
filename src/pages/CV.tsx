@@ -7,7 +7,7 @@ const experience = [
     location: "Leuven, Belgium",
     title: "Postdoctoral Researcher",
     org: "KU Leuven",
-    orgLink: "https://www.kuleuven.be",
+    orgLink: "https://research.kuleuven.be/portal/en/project/3E221369",
     items: [
       "This position is part of the FWO-funded project Helioskill: Heliophysics Simulations & Artificial Intelligence, which targets a yet unsolved problem in space and astrophysics: how energy is dissipated in virtually collisionless astrophysical systems. The research combines high-resolution kinetic simulations with in-situ spacecraft observations. It involves unsupervised clustering, and sparse identification of nonlinear dynamics. The work is conducted at the Centre for Mathematical Plasma Astrophysics (CmPA) within the Department of Mathematics at KU Leuven.",
     ],
@@ -27,6 +27,7 @@ const experience = [
     location: "Spain",
     title: "Research Fellowship",
     org: "Barcelona Supercomputing Center",
+    orgLink: "https://fusion.bsc.es/index.php/former-members/",
     items: [
       "Conducted HPC-based modelling of nuclear fusion plasmas in ASDEX Upgrade, focusing on ³He minority ICRF heating, fast-ion dynamics, and transport analysis. Simulated heating and transport profiles in high ion-temperature-gradient discharges, supporting interpretation of experimental results and comparison with gyrokinetic turbulence models for tokamak confinement studies.",
     ],
@@ -34,7 +35,7 @@ const experience = [
   {
     period: "2014 – 2015",
     location: "Brazil",
-    title: "Research Experience",
+    title: "Intern",
     org: "University of Brasília Plasma Physics Laboratory",
     items: [
       "Development of Technologies linked with Plasma Physics including: Energy Analyser, Emissive Probes, Langmuir Probes et cetera.",
@@ -43,7 +44,7 @@ const experience = [
   {
     period: "2011 – 2012",
     location: "Brazil",
-    title: "Research Experience",
+    title: "Intern",
     org: "Brazilian Space Agency",
     items: [
       "At the Brazilian Space Agency, I had contact with professionals worldwide, working in partnership with another countries, gathering informations about the CanSat competition, and further implementing it in Brazil at a university competition of micro-satellites. Furthermore I supported the built up a prototype for the Agency.",
