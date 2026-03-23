@@ -19,7 +19,8 @@ const experience = [
     title: "Research Experience",
     org: "Max-Planck-Institut für Plasmaphysik (IPP)",
     items: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "The goal of my PostDoc is to numerically implement the theoretical framework I developed during the Ph.D. Additionally, we analyse in-situ satellite data to assess the model's accuracy and predictive capabilities. Ultimately, the research's goal is to understand the influence of turbulence on particle acceleration and heating in space and high energy astrophysical plasmas, which is to date an open question in astro- and space physics.",
+      "My Ph.D. research centered on devising a theoretical framework grounded in Hamiltonian field theory and symplectic geometry. This framework sought to establish a reduced physical kinetic approach that, when combined with field equations, could effectively model turbulence in nuclear fusion devices and astrophysical plasmas.",
     ],
   },
   {
@@ -27,36 +28,42 @@ const experience = [
     location: "Spain",
     title: "Research Experience",
     org: "Barcelona Supercomputing Center",
-    items: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    ],
+    items: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit."],
   },
   {
     period: "2014 – 2015",
     location: "Brazil",
     title: "Research Experience",
     org: "University of Brasília Plasma Physics Laboratory",
-    items: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    ],
+    items: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit."],
   },
   {
     period: "2011 – 2012",
     location: "Brazil",
     title: "Research Experience",
     org: "Brazilian Space Agency",
-    items: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    ],
+    items: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit."],
   },
 ];
 
 const links = [
   { label: "GitHub", url: "https://github.com/nathanfelipe", description: "Code repositories & projects" },
-  { label: "Google Scholar", url: "https://scholar.google.es/citations?user=VXjKX2kAAAAJ&hl=en", description: "Publication metrics & citations" },
+  {
+    label: "Google Scholar",
+    url: "https://scholar.google.es/citations?user=VXjKX2kAAAAJ&hl=en",
+    description: "Publication metrics & citations",
+  },
   { label: "ORCID", url: "https://orcid.org/0000-0002-1290-2621", description: "Researcher identifier" },
-  { label: "ResearchGate", url: "https://www.researchgate.net/profile/Felipe-Nathan-De-Oliveira", description: "Research network profile" },
-  { label: "Web of Science", url: "https://www.webofscience.com/wos/author/record/E-9258-2016", description: "Web of Science profile" },
+  {
+    label: "ResearchGate",
+    url: "https://www.researchgate.net/profile/Felipe-Nathan-De-Oliveira",
+    description: "Research network profile",
+  },
+  {
+    label: "Web of Science",
+    url: "https://www.webofscience.com/wos/author/record/E-9258-2016",
+    description: "Web of Science profile",
+  },
   { label: "LinkedIn", url: "https://www.linkedin.com/in/nathan-de-oliveira/", description: "Professional network" },
   { label: "Download Full CV (PDF)", url: "#", description: "Complete curriculum vitae" },
 ];
@@ -100,15 +107,19 @@ const CV = () => {
             </div>
             <div className="space-y-1.5">
               <h3 className="text-base font-serif text-white font-semibold">{entry.title}</h3>
-              {entry.org && (
-                entry.orgLink ? (
-                  <a href={entry.orgLink} target="_blank" rel="noopener noreferrer" className="text-xs text-white/50 hover:text-white/80 hover:underline transition-colors">
+              {entry.org &&
+                (entry.orgLink ? (
+                  <a
+                    href={entry.orgLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-white/50 hover:text-white/80 hover:underline transition-colors"
+                  >
                     {entry.org}
                   </a>
                 ) : (
                   <p className="text-xs text-white/40">{entry.org}</p>
-                )
-              )}
+                ))}
               <ul className="space-y-1 mt-1">
                 {entry.items.map((item, j) => (
                   <li key={j} className="text-sm text-white/60 flex gap-2">
@@ -144,7 +155,10 @@ const CV = () => {
               </span>
               <p className="text-[10px] text-white/40">{link.description}</p>
             </div>
-            <ExternalLink size={12} className="text-white/30 group-hover:text-white/60 transition-colors flex-shrink-0" />
+            <ExternalLink
+              size={12}
+              className="text-white/30 group-hover:text-white/60 transition-colors flex-shrink-0"
+            />
           </a>
         ))}
       </div>
