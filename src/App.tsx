@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import CV from "./pages/CV";
 import Research from "./pages/Research";
 import Blog from "./pages/Blog";
+import Talks from "./pages/Talks";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
