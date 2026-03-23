@@ -45,9 +45,13 @@ const Research = () => {
           <section className="space-y-4">
             <h2 className="text-2xl font-serif text-foreground">Background</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Ph.D. in physics from Ruhr-Universität Bochum. M.Sc. in theoretical physics from the University of
-              Brasília. M.Eng. in nuclear sciences from the Polytechnic University of Catalonia. Previously at Max
-              Planck Institute for Plasma Physics and Barcelona Supercomputing Center.
+              I hold a M.Sc. in Theoretical Physics from the University of Brasília in Brazil, and an M.Eng. in Nuclear
+              Sciences from the Polytechnic University of Catalonia in Spain, while an intern at the Barcelona
+              Supercomputing Center, where I worked with turbulence stabilisation via fast ions in controlled
+              thermonuclear fusion. I also have a Ph.D. in Physics from the Ruhr-Universität Bochum in Germany, and at
+              the same time I worked at the Max Planck Institute for Plasma Physics in Munich, where I developed a
+              geometrical formulation of hamiltonian field theory applied to modelling reduced (gyro)kinetic turbulence
+              in astrophysical and space plasmas..
             </p>
           </section>
         </div>
