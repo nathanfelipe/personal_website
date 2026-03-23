@@ -7,7 +7,7 @@ const Research = () => {
         <div className="space-y-4 mb-16">
           <p className="text-sm tracking-widest uppercase text-primary">Current Research</p>
           <h1 className="text-5xl md:text-6xl font-serif text-foreground">HELIOSKILL</h1>
-          <p className="text-muted-foreground max-w-xl leading-relaxed">
+          <p className="text-muted-foreground leading-relaxed">
             This position is part of the FWO-funded project Helioskill: Heliophysics Simulations & Artificial
             Intelligence, which targets a yet unsolved problem in space and astrophysics: how energy is dissipated in
             virtually collisionless astrophysical plasmas. The research combines high-resolution kinetic simulations
