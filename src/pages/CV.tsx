@@ -46,7 +46,7 @@ const experience = [
     title: "Research Experience",
     org: "Brazilian Space Agency",
     items: [
-      "At the Brazilian Space Agency, I had contact with professionals worldwide, working in partnership with Another countries, gathering informations about the CanSat competition, therefore implementing in Brazil a university competition of Micro-satellites, and starting to built a prototype for the Agenc",
+      "At the Brazilian Space Agency, I had contact with professionals worldwide, working in partnership with another countries, gathering informations about the CanSat competition, and further implementing it in Brazil at a university competition of micro-satellites. Furthermore I suppoerted the built up a prototype for the Agency.",
     ],
   },
 ];
