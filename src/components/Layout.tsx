@@ -10,6 +10,7 @@ const navItems = [
   { to: "/", label: "Home" },
   { to: "/cv", label: "CV" },
   { to: "/research", label: "Research" },
+  { to: "/talks", label: "Talks" },
   { to: "/blog", label: "Bio" },
   { to: "/contact", label: "Contact" },
 ];
