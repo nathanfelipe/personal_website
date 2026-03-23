@@ -9,8 +9,7 @@ const experience = [
     org: "KU Leuven",
     orgLink: "https://www.kuleuven.be",
     items: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "This position is part of the FWO-funded project Helioskill: Heliophysics Simulations & Artificial Intelligence, which targets a yet unsolved problem in space and astrophysics: how energy is dissipated in virtually collisionless astrophysical systems. The research combines high-resolution kinetic simulations with in-situ spacecraft observations. It involves unsupervised clustering, and sparse identification of nonlinear dynamics. The work is conducted at the Centre for Mathematical Plasma Astrophysics (CmPA) within the Department of Mathematics at KU Leuven.",
     ],
   },
   {
@@ -26,23 +25,29 @@ const experience = [
   {
     period: "2016 – 2017",
     location: "Spain",
-    title: "Research Experience",
+    title: "Research Fellowship",
     org: "Barcelona Supercomputing Center",
-    items: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit."],
+    items: [
+      "Conducted HPC-based modelling of nuclear fusion plasmas in ASDEX Upgrade, focusing on ³He minority ICRF heating, fast-ion dynamics, and transport analysis. Simulated heating and transport profiles in high ion-temperature-gradient discharges, supporting interpretation of experimental results and comparison with gyrokinetic turbulence models for tokamak confinement studies.",
+    ],
   },
   {
     period: "2014 – 2015",
     location: "Brazil",
     title: "Research Experience",
     org: "University of Brasília Plasma Physics Laboratory",
-    items: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit."],
+    items: [
+      "Development of Technologies linked with Plasma Physics including: Energy Analyser, Emissive Probes, Langmuir Probes et cetera.",
+    ],
   },
   {
     period: "2011 – 2012",
     location: "Brazil",
     title: "Research Experience",
     org: "Brazilian Space Agency",
-    items: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit."],
+    items: [
+      "At the Brazilian Space Agency, I had contact with professionals worldwide, working in partnership with Another countries, gathering informations about the CanSat competition, therefore implementing in Brazil a university competition of Micro-satellites, and starting to built a prototype for the Agenc",
+    ],
   },
 ];
 
