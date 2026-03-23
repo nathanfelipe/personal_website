@@ -8,8 +8,12 @@ const Research = () => {
           <p className="text-sm tracking-widest uppercase text-primary">Current Research</p>
           <h1 className="text-5xl md:text-6xl font-serif text-foreground">HELIOSKILL</h1>
           <p className="text-muted-foreground max-w-xl leading-relaxed">
-            An FWO-funded project combining physically informed machine learning with space mission data 
-            and high-resolution simulations to investigate how energy is dissipated in collisionless systems.
+            This position is part of the FWO-funded project Helioskill: Heliophysics Simulations & Artificial
+            Intelligence, which targets a yet unsolved problem in space and astrophysics: how energy is dissipated in
+            virtually collisionless astrophysical plasmas. The research combines high-resolution kinetic simulations
+            with in-situ spacecraft observations. It involves unsupervised clustering, and sparse identification of
+            nonlinear dynamics, among other machine learning techniques. The work is conducted at the Centre for
+            Mathematical Plasma Astrophysics (CmPA) within the Department of Mathematics at KU Leuven.
           </p>
         </div>
 
@@ -35,10 +39,9 @@ const Research = () => {
           <section className="space-y-4">
             <h2 className="text-2xl font-serif text-foreground">Background</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Ph.D. in physics from Ruhr-Universität Bochum. M.Sc. in theoretical physics from 
-              the University of Brasília. M.Eng. in nuclear sciences from the Polytechnic 
-              University of Catalonia. Previously at Max Planck Institute for Plasma Physics and 
-              Barcelona Supercomputing Center.
+              Ph.D. in physics from Ruhr-Universität Bochum. M.Sc. in theoretical physics from the University of
+              Brasília. M.Eng. in nuclear sciences from the Polytechnic University of Catalonia. Previously at Max
+              Planck Institute for Plasma Physics and Barcelona Supercomputing Center.
             </p>
           </section>
         </div>
