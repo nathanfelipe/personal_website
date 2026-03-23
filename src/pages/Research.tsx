@@ -49,9 +49,9 @@ const Research = () => {
               Sciences from the Polytechnic University of Catalonia in Spain, while an intern at the Barcelona
               Supercomputing Center, where I worked with turbulence stabilisation via fast ions in controlled
               thermonuclear fusion. I also have a Ph.D. in Physics from the Ruhr-Universität Bochum in Germany, and at
-              the same time I worked at the Max Planck Institute for Plasma Physics in Munich, where I developed a
-              geometrical formulation of hamiltonian field theory applied to modelling reduced (gyro)kinetic turbulence
-              in astrophysical and space plasmas..
+              the same time I worked at the Max Planck Institute for Plasma Physics in Munich, where I extended a
+              symplectic (differential geometrical) formulation of hamiltonian field theory to the modelling of reduced
+              (gyro)kinetic turbulence in astrophysical and space plasmas.
             </p>
           </section>
         </div>
