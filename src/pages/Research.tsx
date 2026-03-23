@@ -23,15 +23,18 @@ const Research = () => {
             <ul className="space-y-3 text-muted-foreground leading-relaxed">
               <li className="flex gap-3">
                 <span className="text-primary mt-1">◦</span>
-                <span>Fully kinetic particle-in-cell simulations</span>
+                <span>HPC fully kinetic particle-in-cell simulations</span>
               </li>
               <li className="flex gap-3">
                 <span className="text-primary mt-1">◦</span>
-                <span>Working with solar wind in-situ data</span>
+                <span>Analysis of solar wind in-situ data (e.g. Magnetospheric Multiscale Mission)</span>
               </li>
               <li className="flex gap-3">
                 <span className="text-primary mt-1">◦</span>
-                <span>Symbolic regression for equation of state for plasma</span>
+                <span>
+                  Sparse identification of nonlinear dynamics, physics informed neural networks, and other ML techniques
+                  and AI architechtures
+                </span>
               </li>
             </ul>
           </section>
