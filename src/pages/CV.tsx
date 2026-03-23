@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const experience = [
   {
-    period: "2024 – Present",
+    period: "2025 – Present",
     location: "Leuven, Belgium",
     title: "Postdoctoral Researcher",
     org: "KU Leuven",
@@ -13,7 +13,7 @@ const experience = [
     ],
   },
   {
-    period: "2017 – 2024",
+    period: "2017 – 2025",
     location: "Germany",
     title: "Wissenschaftlicher Mitarbeiter (Doktorand und Postdoktorand)",
     org: "Max-Planck-Institut für Plasmaphysik (IPP)",
