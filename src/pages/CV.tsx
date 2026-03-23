@@ -16,7 +16,7 @@ const experience = [
   {
     period: "2017 – 2024",
     location: "Germany",
-    title: "Research Experience",
+    title: "Wissenschaftlicher Mitarbeiter (Doktorand und Postdoktorand)",
     org: "Max-Planck-Institut für Plasmaphysik (IPP)",
     items: [
       "The goal of my PostDoc is to numerically implement the theoretical framework I developed during the Ph.D. Additionally, we analyse in-situ satellite data to assess the model's accuracy and predictive capabilities. Ultimately, the research's goal is to understand the influence of turbulence on particle acceleration and heating in space and high energy astrophysical plasmas, which is to date an open question in astro- and space physics.",
