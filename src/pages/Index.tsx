@@ -4,7 +4,7 @@ import profileImg from "@/assets/profile.jpg";
 
 const navOptions = [
   { to: "/cv", label: "CV" },
-  { to: "/research", label: "Current Research" },
+  { to: "/research", label: "Research" },
   { to: "/talks", label: "Talks" },
   { to: "/blog", label: "Bio" },
   { to: "/contact", label: "Contact" },
