@@ -23,7 +23,10 @@ const Research = () => {
             <ul className="space-y-3 text-muted-foreground leading-relaxed">
               <li className="flex gap-3">
                 <span className="text-primary mt-1">◦</span>
-                <span>HPC fully kinetic particle-in-cell simulations</span>
+                <span>
+                  High performance computation of fully kinetic particle-in-cell simulations (HPC systems: VSC
+                  (Belgium), LUMI (Finland))
+                </span>
               </li>
               <li className="flex gap-3">
                 <span className="text-primary mt-1">◦</span>
@@ -33,7 +36,7 @@ const Research = () => {
                 <span className="text-primary mt-1">◦</span>
                 <span>
                   Sparse identification of nonlinear dynamics, physics informed neural networks, and other ML techniques
-                  and AI architechtures
+                  and AI architechtures (e.g. FCNN, MLP)
                 </span>
               </li>
             </ul>
