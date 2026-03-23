@@ -7,8 +7,7 @@ const posts = [
   {
     title: "Volunteer as a Secondary School Teacher",
     date: "March 2025",
-    excerpt:
-      "On March 2025, I spent a couple of weeks assisting teachers at a secondary boarding school in Nepal.",
+    excerpt: "On March 2025, I spent a couple of weeks assisting teachers at a secondary boarding school in Nepal.",
     link: "https://264.education/projects/heaven-hill-academy",
     thumbnail: profileImg,
     content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -125,7 +124,7 @@ const Blog = () => {
               <p className="text-xs tracking-[0.3em] uppercase text-white/50">Bio & Blog</p>
               <div className="w-12 h-px bg-white/30" />
               <h1 className="text-3xl md:text-4xl font-serif text-white">
-                Personal view on delicate issues…
+                No man is an island entire of itself; every man is a piece of the continent…
               </h1>
             </div>
 
@@ -178,12 +177,8 @@ const Blog = () => {
             </button>
 
             <div className="space-y-3 mb-8">
-              <time className="text-[10px] text-white/40 tracking-wide uppercase">
-                {posts[selectedPost].date}
-              </time>
-              <h1 className="text-2xl md:text-3xl font-serif text-white">
-                {posts[selectedPost].title}
-              </h1>
+              <time className="text-[10px] text-white/40 tracking-wide uppercase">{posts[selectedPost].date}</time>
+              <h1 className="text-2xl md:text-3xl font-serif text-white">{posts[selectedPost].title}</h1>
             </div>
 
             {/* Image gallery */}
