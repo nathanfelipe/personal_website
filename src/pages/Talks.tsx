@@ -7,40 +7,12 @@ import princeton2 from "@/assets/princeton_2.jpg";
 
 const talks = [
   {
-    title: "Example Talk Title",
-    date: "March 2025",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    thumbnail: profileImg,
-    content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
-    images: [profileImg, profileImg],
-  },
-  {
-    title: "Another Talk Placeholder",
-    date: "January 2025",
-    excerpt: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
-    thumbnail: profileImg,
-    content: `Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.
-
-Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
-
-At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.`,
-    images: [profileImg],
-  },
-  {
-    title: "Conference Presentation Example",
-    date: "September 2024",
-    excerpt: "Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
-    thumbnail: profileImg,
-    content: `Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
-
-Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.
-
-Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.`,
-    images: [profileImg, profileImg, profileImg],
+    title: "Talk at Princeton Plasma Physics Laboratory Graduate Summer School",
+    date: "October 2019",
+    excerpt: "Oral presentation on Differential Geometry tools for Kinetic Physics of Astrophysical Plasmas at the PPPL Graduate Summer School.",
+    thumbnail: princeton1,
+    content: `During the summer school, a few of the participants were offered the possibility to present their PhD project as an oral presentation instead of a poster. I volunteered myself to do so, and prepared my presentation in a way in which I not only communicated the state-of-the-art of my work, but went beyond. In the context of Differential Geometry, I gave a brief introduction to the tools required to better understand my approach to Kinetic Physics of Astrophysical Plasmas. A video of the talk will be soon posted here.`,
+    images: [princeton1, princeton2],
   },
 ];
 
