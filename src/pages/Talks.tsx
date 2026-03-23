@@ -2,6 +2,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import profileImg from "@/assets/profile.jpg";
+import princeton1 from "@/assets/princeton_1.jpg";
+import princeton2 from "@/assets/princeton_2.jpg";
 
 const talks = [
   {
