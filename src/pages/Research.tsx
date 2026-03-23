@@ -48,10 +48,10 @@ const Research = () => {
               I hold a M.Sc. in Theoretical Physics from the University of Brasília in Brazil, and an M.Eng. in Nuclear
               Sciences from the Polytechnic University of Catalonia in Spain, while an intern at the Barcelona
               Supercomputing Center, where I worked with turbulence stabilisation via fast ions in controlled
-              thermonuclear fusion. I also have a Ph.D. in Physics from the Ruhr-Universität Bochum in Germany, and at
-              the same time I worked at the Max Planck Institute for Plasma Physics in Munich, where I extended a
-              symplectic (differential geometrical) formulation of hamiltonian field theory to the modelling of reduced
-              (gyro)kinetic turbulence in astrophysical and space plasmas.
+              thermonuclear fusion. Furthermore, I have a Ph.D. in Physics from the Ruhr-Universität Bochum in Germany,
+              while at the same time I worked at the Max Planck Institute for Plasma Physics in Munich. During tha time,
+              I extended a symplectic (differential geometrical) formulation of hamiltonian field theory to the
+              modelling of reduced (gyro)kinetic turbulence in astrophysical and space plasmas.
             </p>
           </section>
         </div>
