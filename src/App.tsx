@@ -31,6 +31,7 @@ const App = () => (
               <Route path="/talks" element={<Talks />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/blackhole" element={<BlackHole />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
