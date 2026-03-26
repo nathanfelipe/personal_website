@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
+import Lightbox from "@/components/Lightbox";
 import profileImg from "@/assets/profile.jpg";
 import bioVolunteer1 from "@/assets/bio_volunteer_1.jpg";
 import bioVolunteer2 from "@/assets/bio_volunteer_2.jpg";
@@ -168,6 +169,7 @@ const fadeIn = {
 
 const Blog = () => {
   const [selectedPost, setSelectedPost] = useState<number | null>(null);
+  const [lightbox, setLightbox] = useState<{ images: string[]; index: number } | null>(null);
 
   return (
     <div className="px-8 md:px-12 py-12 md:py-16 h-full overflow-y-auto relative">
@@ -203,6 +205,7 @@ const Blog = () => {
                     <img
                       src={post.thumbnail}
                       alt=""
+                      loading="lazy"
                       className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover shrink-0 border border-white/10 mt-1"
                     />
                     <div className="space-y-2 min-w-0">
@@ -249,7 +252,9 @@ const Blog = () => {
                     key={i}
                     src={img}
                     alt=""
-                    className="w-40 h-28 md:w-52 md:h-36 rounded-xl object-cover shrink-0 border border-white/10"
+                    loading="lazy"
+                    onClick={() => setLightbox({ images: posts[selectedPost!].images, index: i })}
+                    className="w-40 h-28 md:w-52 md:h-36 rounded-xl object-cover shrink-0 border border-white/10 cursor-pointer hover:opacity-80 transition-opacity"
                   />
                 ))}
               </div>
@@ -277,6 +282,12 @@ const Blog = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      <Lightbox
+        images={lightbox?.images ?? []}
+        initialIndex={lightbox?.index ?? 0}
+        open={!!lightbox}
+        onClose={() => setLightbox(null)}
+      />
     </div>
   );
 };
