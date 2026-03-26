@@ -65,17 +65,21 @@ const Lightbox = ({ images, initialIndex = 0, open, onClose }: LightboxProps) =>
           </>
         )}
 
-        <motion.img
+        <motion.div
           key={index}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.2 }}
-          src={images[index]}
-          alt=""
-          className="max-w-[90vw] max-h-[85vh] object-contain rounded-xl"
+          className="max-w-[90vw] max-h-[85vh] overflow-y-auto rounded-xl"
           onClick={(e) => e.stopPropagation()}
-        />
+        >
+          <img
+            src={images[index]}
+            alt=""
+            className="w-auto max-w-full rounded-xl"
+          />
+        </motion.div>
 
         {images.length > 1 && (
           <div className="absolute bottom-6 flex gap-2">
