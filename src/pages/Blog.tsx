@@ -254,7 +254,7 @@ const Blog = () => {
                     alt=""
                     loading="lazy"
                     onClick={() => setLightbox({ images: posts[selectedPost!].images, index: i })}
-                    className="w-40 h-28 md:w-52 md:h-36 rounded-xl object-cover shrink-0 border border-white/10 cursor-pointer hover:opacity-80 transition-opacity"
+                    className="h-36 md:h-48 w-auto max-w-[280px] rounded-xl object-contain shrink-0 border border-white/10 cursor-pointer hover:opacity-80 transition-opacity bg-black/20"
                   />
                 ))}
               </div>
