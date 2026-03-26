@@ -11,6 +11,7 @@ import Research from "./pages/Research";
 import Blog from "./pages/Blog";
 import Talks from "./pages/Talks";
 import Contact from "./pages/Contact";
+import BlackHole from "./pages/BlackHole";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
