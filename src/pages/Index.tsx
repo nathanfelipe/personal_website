@@ -7,6 +7,7 @@ const navOptions = [
   { to: "/research", label: "Research" },
   { to: "/talks", label: "Talks" },
   { to: "/blog", label: "Bio" },
+  { to: "/blackhole", label: "Black Hole" },
   { to: "/contact", label: "Contact" },
 ];
 
