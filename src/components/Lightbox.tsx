@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 
@@ -33,67 +33,72 @@ const Lightbox = ({ images, initialIndex = 0, open, onClose }: LightboxProps) =>
   if (!open || images.length === 0) return null;
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm"
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <button
         onClick={onClose}
+        className="absolute top-6 right-6 text-white/60 hover:text-white transition-colors z-10"
       >
-        <button
-          onClick={onClose}
-          className="absolute top-6 right-6 text-white/60 hover:text-white transition-colors z-10"
-        >
-          <X size={24} />
-        </button>
+        <X size={24} />
+      </button>
 
-        {images.length > 1 && (
-          <>
-            <button
-              onClick={(e) => { e.stopPropagation(); prev(); }}
-              className="absolute left-4 text-white/50 hover:text-white transition-colors z-10"
-            >
-              <ChevronLeft size={32} />
-            </button>
-            <button
-              onClick={(e) => { e.stopPropagation(); next(); }}
-              className="absolute right-4 text-white/50 hover:text-white transition-colors z-10"
-            >
-              <ChevronRight size={32} />
-            </button>
-          </>
-        )}
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              prev();
+            }}
+            className="absolute left-4 text-white/50 hover:text-white transition-colors z-10"
+          >
+            <ChevronLeft size={32} />
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              next();
+            }}
+            className="absolute right-4 text-white/50 hover:text-white transition-colors z-10"
+          >
+            <ChevronRight size={32} />
+          </button>
+        </>
+      )}
 
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          transition={{ duration: 0.2 }}
-          className="max-w-[90vw] max-h-[85vh] overflow-y-auto rounded-xl"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <img
-            src={images[index]}
-            alt=""
-            className="w-auto max-w-full rounded-xl"
-          />
-        </motion.div>
-
-        {images.length > 1 && (
-          <div className="absolute bottom-6 flex gap-2">
-            {images.map((_, i) => (
-              <button
-                key={i}
-                onClick={(e) => { e.stopPropagation(); setIndex(i); }}
-                className={`w-2 h-2 rounded-full transition-colors ${i === index ? "bg-white" : "bg-white/30"}`}
-              />
-            ))}
-          </div>
-        )}
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, scale: 0.96 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.2 }}
+        className="max-w-[90vw] max-h-[85vh] overflow-auto overscroll-contain rounded-xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <img
+          src={images[index]}
+          alt={`Expanded image ${index + 1} of ${images.length}`}
+          className="block w-full h-auto object-contain rounded-xl"
+        />
       </motion.div>
-    </AnimatePresence>
+
+      {images.length > 1 && (
+        <div className="absolute bottom-6 flex gap-2">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIndex(i);
+              }}
+              className={`w-2 h-2 rounded-full transition-colors ${i === index ? "bg-white" : "bg-white/30"}`}
+            />
+          ))}
+        </div>
+      )}
+    </motion.div>
   );
 };
 
