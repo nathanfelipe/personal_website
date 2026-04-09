@@ -6,9 +6,19 @@ import profileImg from "@/assets/profile.jpg";
 import bioVolunteer1 from "@/assets/bio_volunteer_1.jpg";
 import bioVolunteer2 from "@/assets/bio_volunteer_2.jpg";
 import bioVolunteer3 from "@/assets/bio_volunteer_3.jpg";
+import bioVolunteer4 from "@/assets/bio_volunteer_4.jpeg";
+import bioVolunteer5 from "@/assets/bio_volunteer_5.jpeg";
+import bioVolunteer6 from "@/assets/bio_volunteer_6.jpg";
+import bioVolunteer7 from "@/assets/bio_volunteer_7.jpeg";
 import bioPaintings1 from "@/assets/bio_paintings_1.jpg";
 import bioPaintings2 from "@/assets/bio_paintings_2.jpg";
 import bioPaintings3 from "@/assets/bio_paintings_3.jpg";
+import bioPaintings4 from "@/assets/bio_paintings_4.jpeg";
+import bioPaintings5 from "@/assets/bio_paintings_5.jpeg";
+import bioPaintings6 from "@/assets/bio_paintings_6.jpg";
+import bioPaintings7 from "@/assets/bio_paintings_7.jpeg";
+import bioPaintings8 from "@/assets/bio_paintings_8.jpg";
+import bioPaintings9 from "@/assets/bio_paintings_9.jpeg";
 import bioPostdocnet1 from "@/assets/bio_postdocnet_1.png";
 import bioPostdocnet2 from "@/assets/bio_postdocnet_2.png";
 import bioWeekend1 from "@/assets/bio_weekend_1.png";
@@ -45,7 +55,7 @@ const posts = [
     link: "https://264.education/projects/heaven-hill-academy",
     thumbnail: bioVolunteer1,
     content: `On March 2025, I spent a couple of weeks assisting teachers at a secondary boarding school in Nepal. Together with a team of volunteers, we helped to prepare the exams, taught some classes, organised administrative tasks and even helped to construct new classrooms. For further information about the work, I would highly recommend a quick visit on their website: 264.education/projects/heaven-hill-academy :)`,
-    images: [bioVolunteer1, bioVolunteer2, bioVolunteer3],
+    images: [bioVolunteer1, bioVolunteer2, bioVolunteer3, bioVolunteer4, bioVolunteer5, bioVolunteer6, bioVolunteer7],
   },
   {
     title: "Some of my latest paintings",
@@ -53,7 +63,7 @@ const posts = [
     excerpt: "A collection of recent oil on canvas works and Kandinsky-inspired sketches, exploring color, form, and abstraction.",
     thumbnail: bioPaintings1,
     content: `A collection of recent oil on canvas works and Kandinsky-inspired sketches, exploring color, form, and abstraction.`,
-    images: [bioPaintings1, bioPaintings2, bioPaintings3],
+    images: [bioPaintings1, bioPaintings2, bioPaintings3, bioPaintings4, bioPaintings5, bioPaintings6, bioPaintings7, bioPaintings8, bioPaintings9],
   },
   {
     title: "Last PostdocNet meeting as deputy spokesperson",
