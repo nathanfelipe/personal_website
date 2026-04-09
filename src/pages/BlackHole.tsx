@@ -56,10 +56,10 @@ vec3 starField(vec3 direction) {
     0.5 + asin(direction.y) / PI
   );
   float stars = 0.0;
-  stars += pow(noise(uv * 500.0), 20.0) * 0.8;
-  stars += pow(noise(uv * 200.0 + 10.0), 18.0) * 1.2;
-  stars += pow(noise(uv * 100.0 + 20.0), 16.0) * 1.5;
-  stars += pow(noise(uv * 50.0 + 30.0), 14.0) * 2.0;
+  stars += pow(noise(uv * 500.0), 12.0) * 0.8;
+  stars += pow(noise(uv * 200.0 + 10.0), 10.0) * 1.2;
+  stars += pow(noise(uv * 100.0 + 20.0), 8.0) * 1.5;
+  stars += pow(noise(uv * 50.0 + 30.0), 7.0) * 2.0;
   stars *= 0.9 + 0.1 * sin(uTime * 0.5 + noise(uv * 100.0) * 10.0);
   vec3 starColor = mix(vec3(0.8, 0.9, 1.0), vec3(1.0, 0.9, 0.7), noise(uv * 50.0));
   if (noise(uv * 70.0) > 0.97) {
