@@ -55,7 +55,7 @@ const posts = [
     link: "https://264.education/projects/heaven-hill-academy",
     thumbnail: bioVolunteer1,
     content: `On March 2025, I spent a couple of weeks assisting teachers at a secondary boarding school in Nepal. Together with a team of volunteers, we helped to prepare the exams, taught some classes, organised administrative tasks and even helped to construct new classrooms. For further information about the work, I would highly recommend a quick visit on their website: 264.education/projects/heaven-hill-academy :)`,
-    images: [bioVolunteer1, bioVolunteer2, bioVolunteer3],
+    images: [bioVolunteer1, bioVolunteer2, bioVolunteer3, bioVolunteer4, bioVolunteer5, bioVolunteer6, bioVolunteer7],
   },
   {
     title: "Some of my latest paintings",
