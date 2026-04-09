@@ -53,7 +53,7 @@ vec3 starField(vec3 direction) {
   if (!uShowStars) return vec3(0.0);
   vec2 uv = vec2(
     0.5 + atan(direction.z, direction.x) / (2.0 * PI),
-    0.5 + asin(direction.y) / PI
+    0.5 + asin(clamp(direction.y, -1.0, 1.0)) / PI
   );
   float stars = 0.0;
   stars += pow(noise(uv * 500.0), 12.0) * 0.8;
@@ -81,7 +81,8 @@ vec3 diskGlow(vec3 position, float intensity) {
     radialFactor = (1.0 - x) * exp(-x * 2.0);
   }
   float glowFactor = diskProximity * radialFactor * intensity;
-  vec3 glowColor = mix(vec3(0.2, 0.4, 1.0), vec3(1.0, 0.8, 0.7), exp(-r / (8.0 * rs)));
+  // Warm orange/gold glow
+  vec3 glowColor = mix(vec3(1.0, 0.4, 0.05), vec3(1.0, 0.85, 0.4), exp(-r / (8.0 * rs)));
   return glowColor * glowFactor * uGlowIntensity;
 }
 
@@ -99,28 +100,34 @@ vec4 accretionDiskColor(vec3 position, vec3 velocity) {
   if (abs(position.y) > diskThickness) return vec4(0.0);
   float edgeFactor = smoothstep(diskThickness, 0.0, abs(position.y));
   diskFactor *= edgeFactor;
-  float temperature = mix(6000.0, 15000.0, 1.0 - r/outerDiskRadius);
+
+  // Warm color scheme: inner=white-hot, mid=gold/yellow, outer=deep orange/red
+  float t_rad = clamp((r - innerDiskRadius) / (outerDiskRadius - innerDiskRadius), 0.0, 1.0);
   vec3 col;
-  if (temperature > 10000.0) {
-    float t = (temperature - 10000.0) / 5000.0;
-    col = mix(vec3(0.9, 0.9, 1.0), vec3(0.7, 0.8, 1.0), t);
-  } else if (temperature > 6500.0) {
-    float t = (temperature - 6500.0) / 3500.0;
-    col = mix(vec3(1.0, 1.0, 1.0), vec3(0.9, 0.9, 1.0), t);
+  if (t_rad < 0.2) {
+    // Inner: white-hot to bright yellow
+    float t = t_rad / 0.2;
+    col = mix(vec3(1.0, 1.0, 0.95), vec3(1.0, 0.95, 0.5), t);
+  } else if (t_rad < 0.5) {
+    // Mid: bright yellow to orange
+    float t = (t_rad - 0.2) / 0.3;
+    col = mix(vec3(1.0, 0.95, 0.5), vec3(1.0, 0.6, 0.15), t);
   } else {
-    float t = temperature / 6500.0;
-    col = mix(vec3(1.0, 0.5, 0.0), vec3(1.0, 1.0, 1.0), t);
+    // Outer: orange to deep red
+    float t = (t_rad - 0.5) / 0.5;
+    col = mix(vec3(1.0, 0.6, 0.15), vec3(0.8, 0.2, 0.05), t);
   }
+
   float angle = atan(position.z, position.x);
   float spiral = sin(angle * 4.0 + 20.0 * log(r/rs) + uTime * 0.5);
   diskFactor *= (0.8 + 0.2 * spiral * spiral);
   float turbulence = noise(vec2(angle * 5.0, r/rs) + uTime * 0.2);
   diskFactor *= (0.8 + 0.4 * turbulence);
   if (turbulence > 0.85) {
-    col = mix(col, vec3(1.0, 0.9, 0.8), 0.5);
+    col = mix(col, vec3(1.0, 0.95, 0.8), 0.5);
     diskFactor *= 1.5;
   }
-  float redshift = 1.0 / sqrt(1.0 - rs/r);
+  float redshift = 1.0 / sqrt(max(1.0 - rs/r, 0.001));
   col = col / redshift;
   float orbitalVelocity = sqrt(G * (uMass * M_SUN) / r) / c;
   float beamingDirection = dot(normalize(position), vec3(0.0, 0.0, 1.0));
@@ -135,10 +142,10 @@ vec3 traceRay(vec3 rayOrigin, vec3 rayDirection) {
   vec3 col = vec3(0.0);
   float opacity = 0.0;
   vec3 position = rayOrigin;
-  vec3 velocity = rayDirection;
-  float dt = 0.3 * rs;
-  const int MAX_STEPS = 400;
-  float maxDistance = 120.0 * rs;
+  vec3 velocity = normalize(rayDirection);
+  float dt = 0.5 * rs;
+  const int MAX_STEPS = 200;
+  float maxDistance = 200.0 * rs;
   float totalDistance = 0.0;
   vec3 totalGlow = vec3(0.0);
   for (int i = 0; i < MAX_STEPS; i++) {
@@ -152,16 +159,14 @@ vec3 traceRay(vec3 rayOrigin, vec3 rayDirection) {
       opacity += diskColor.a * (1.0 - opacity);
       if (opacity > 0.95) break;
     }
-    // Proper gravitational deflection (Verlet-style)
     vec3 dir = normalize(position);
     float forceMag = 1.5 * rs / (r * r);
     vec3 acc = -dir * forceMag;
-    velocity += acc * dt;
-    velocity = normalize(velocity);
+    velocity = normalize(velocity + acc * dt);
     position += velocity * dt;
     totalDistance += dt;
     if (totalDistance > maxDistance) {
-      vec3 starColor = starField(velocity);
+      vec3 starColor = starField(normalize(velocity));
       col = mix(col, starColor, 1.0 - opacity);
       break;
     }
@@ -189,7 +194,7 @@ void main() {
   const float d = 0.59;
   const float e = 0.14;
   col = (col * (a * col + b)) / (col * (cc * col + d) + e);
-  col = pow(col, vec3(0.9));
+  col = pow(col, vec3(0.85));
   gl_FragColor = vec4(col, 1.0);
 }
 `;
@@ -215,7 +220,6 @@ const BlackHole = () => {
   const [camDist, setCamDist] = useState(30);
   const [diskIntensity, setDiskIntensity] = useState(1.0);
 
-  // Camera orbit state
   const dragRef = useRef({ dragging: false, lastX: 0, lastY: 0, theta: 0.3, phi: 0.8 });
 
   const onPointerDown = useCallback((e: React.PointerEvent) => {
@@ -281,9 +285,13 @@ const BlackHole = () => {
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
     const posLoc = gl.getAttribLocation(program, "aVertexPosition");
 
+    // Render at half resolution for performance
+    const RENDER_SCALE = 0.5;
+
     const resize = () => {
-      canvas.width = canvas.clientWidth * (window.devicePixelRatio || 1);
-      canvas.height = canvas.clientHeight * (window.devicePixelRatio || 1);
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = Math.floor(canvas.clientWidth * dpr * RENDER_SCALE);
+      canvas.height = Math.floor(canvas.clientHeight * dpr * RENDER_SCALE);
       gl.viewport(0, 0, canvas.width, canvas.height);
     };
 
@@ -361,7 +369,6 @@ const BlackHole = () => {
         onPointerLeave={onPointerUp}
       />
 
-      {/* Back button */}
       <Link
         to="/"
         className="absolute top-6 left-6 flex items-center gap-2 text-white/40 hover:text-white/80 text-xs tracking-wide uppercase transition-colors z-10"
@@ -370,7 +377,6 @@ const BlackHole = () => {
         Back
       </Link>
 
-      {/* Controls */}
       <div className="absolute bottom-6 left-6 bg-black/70 backdrop-blur-sm rounded-2xl p-5 space-y-4 text-white/80 text-xs z-10 min-w-[220px]">
         <h3 className="text-sm font-serif text-white tracking-wide">Black Hole</h3>
         
@@ -387,7 +393,7 @@ const BlackHole = () => {
         <label className="flex items-center justify-between gap-3">
           <span>Distance</span>
           <input
-            type="range" min="10" max="50" step="1" value={camDist}
+            type="range" min="10" max="200" step="1" value={camDist}
             onChange={(e) => setCamDist(parseInt(e.target.value))}
             className="w-24 accent-white/60"
           />
