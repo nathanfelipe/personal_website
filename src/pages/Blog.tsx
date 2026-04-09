@@ -63,7 +63,7 @@ const posts = [
     excerpt: "A collection of recent oil on canvas works and Kandinsky-inspired sketches, exploring color, form, and abstraction.",
     thumbnail: bioPaintings1,
     content: `A collection of recent oil on canvas works and Kandinsky-inspired sketches, exploring color, form, and abstraction.`,
-    images: [bioPaintings1, bioPaintings2, bioPaintings3],
+    images: [bioPaintings1, bioPaintings2, bioPaintings3, bioPaintings4, bioPaintings5, bioPaintings6, bioPaintings7, bioPaintings8, bioPaintings9],
   },
   {
     title: "Last PostdocNet meeting as deputy spokesperson",
