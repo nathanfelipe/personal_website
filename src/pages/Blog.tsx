@@ -116,7 +116,7 @@ It is better imperfectly finished, than perfectly unfinished. The opportunity to
     excerpt: "A gallery of sketches and paintings — exploring the question of what is and isn't art.",
     thumbnail: bioKunst1,
     content: `A gallery of sketches and paintings — exploring the question of what is and isn't art.`,
-    images: [bioKunst1, bioKunst2],
+    images: [bioKunst1, bioKunst2, bioKunst3, bioKunst4, bioKunst5, bioKunst6, bioKunst7],
   },
   {
     title: "What is not art?",
@@ -124,7 +124,7 @@ It is better imperfectly finished, than perfectly unfinished. The opportunity to
     excerpt: "A collection of photographs and artworks questioning the boundaries of artistic expression.",
     thumbnail: bioArt1,
     content: `A collection of photographs and artworks questioning the boundaries of artistic expression.`,
-    images: [bioArt1, bioArt2],
+    images: [bioArt1, bioArt2, bioArt3, bioArt4, bioArt5, bioArt6, bioArt7],
   },
   {
     title: "25th anniversary — The year I spent my birthday giving classes of physics to master students in Bochum",
