@@ -56,10 +56,10 @@ vec3 starField(vec3 direction) {
     0.5 + asin(clamp(direction.y, -1.0, 1.0)) / PI
   );
   float stars = 0.0;
-  stars += pow(noise(uv * 500.0), 8.0) * 1.5;
-  stars += pow(noise(uv * 200.0 + 10.0), 6.0) * 2.0;
-  stars += pow(noise(uv * 100.0 + 20.0), 5.0) * 2.5;
-  stars += pow(noise(uv * 50.0 + 30.0), 4.0) * 3.0;
+  stars += pow(noise(uv * 500.0), 12.0) * 0.8;
+  stars += pow(noise(uv * 200.0 + 10.0), 10.0) * 1.2;
+  stars += pow(noise(uv * 100.0 + 20.0), 8.0) * 1.5;
+  stars += pow(noise(uv * 50.0 + 30.0), 7.0) * 2.0;
   stars *= 0.9 + 0.1 * sin(uTime * 0.5 + noise(uv * 100.0) * 10.0);
   vec3 starColor = mix(vec3(0.8, 0.9, 1.0), vec3(1.0, 0.9, 0.7), noise(uv * 50.0));
   if (noise(uv * 70.0) > 0.97) {
@@ -285,18 +285,13 @@ const BlackHole = () => {
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
     const posLoc = gl.getAttribLocation(program, "aVertexPosition");
 
-    // Fixed resolution for performance
-    const RENDER_SIZE = 275;
+    // Render at half resolution for performance
+    const RENDER_SCALE = 0.5;
 
     const resize = () => {
-      const aspect = canvas.clientWidth / canvas.clientHeight;
-      if (aspect >= 1) {
-        canvas.width = RENDER_SIZE;
-        canvas.height = Math.floor(RENDER_SIZE / aspect);
-      } else {
-        canvas.height = RENDER_SIZE;
-        canvas.width = Math.floor(RENDER_SIZE * aspect);
-      }
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = Math.floor(canvas.clientWidth * dpr * RENDER_SCALE);
+      canvas.height = Math.floor(canvas.clientHeight * dpr * RENDER_SCALE);
       gl.viewport(0, 0, canvas.width, canvas.height);
     };
 
@@ -364,11 +359,10 @@ const BlackHole = () => {
   }
 
   return (
-    <div className="fixed inset-0 bg-black overflow-hidden touch-none">
+    <div className="relative w-screen h-screen bg-black overflow-hidden">
       <canvas
         ref={canvasRef}
-        className="w-full h-full block touch-none"
-        style={{ imageRendering: 'auto' }}
+        className="w-full h-full block"
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
