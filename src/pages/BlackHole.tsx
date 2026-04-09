@@ -289,13 +289,15 @@ const BlackHole = () => {
     const RENDER_SIZE = 275;
 
     const resize = () => {
-      const aspect = canvas.clientWidth / canvas.clientHeight;
+      const cw = canvas.clientWidth || window.innerWidth;
+      const ch = canvas.clientHeight || window.innerHeight;
+      const aspect = cw / ch;
       if (aspect >= 1) {
         canvas.width = RENDER_SIZE;
-        canvas.height = Math.floor(RENDER_SIZE / aspect);
+        canvas.height = Math.max(1, Math.floor(RENDER_SIZE / aspect));
       } else {
         canvas.height = RENDER_SIZE;
-        canvas.width = Math.floor(RENDER_SIZE * aspect);
+        canvas.width = Math.max(1, Math.floor(RENDER_SIZE * aspect));
       }
       gl.viewport(0, 0, canvas.width, canvas.height);
     };
