@@ -56,10 +56,10 @@ vec3 starField(vec3 direction) {
     0.5 + asin(clamp(direction.y, -1.0, 1.0)) / PI
   );
   float stars = 0.0;
-  stars += pow(noise(uv * 500.0), 15.0) * 2.0;
-  stars += pow(noise(uv * 200.0 + 10.0), 12.0) * 2.5;
-  stars += pow(noise(uv * 100.0 + 20.0), 10.0) * 3.0;
-  stars += pow(noise(uv * 50.0 + 30.0), 8.0) * 3.5;
+  stars += pow(noise(uv * 500.0), 8.0) * 1.5;
+  stars += pow(noise(uv * 200.0 + 10.0), 6.0) * 2.0;
+  stars += pow(noise(uv * 100.0 + 20.0), 5.0) * 2.5;
+  stars += pow(noise(uv * 50.0 + 30.0), 4.0) * 3.0;
   stars *= 0.9 + 0.1 * sin(uTime * 0.5 + noise(uv * 100.0) * 10.0);
   vec3 starColor = mix(vec3(0.8, 0.9, 1.0), vec3(1.0, 0.9, 0.7), noise(uv * 50.0));
   if (noise(uv * 70.0) > 0.97) {
@@ -289,15 +289,13 @@ const BlackHole = () => {
     const RENDER_SIZE = 275;
 
     const resize = () => {
-      const cw = canvas.clientWidth || window.innerWidth;
-      const ch = canvas.clientHeight || window.innerHeight;
-      const aspect = cw / ch;
+      const aspect = canvas.clientWidth / canvas.clientHeight;
       if (aspect >= 1) {
         canvas.width = RENDER_SIZE;
-        canvas.height = Math.max(1, Math.floor(RENDER_SIZE / aspect));
+        canvas.height = Math.floor(RENDER_SIZE / aspect);
       } else {
         canvas.height = RENDER_SIZE;
-        canvas.width = Math.max(1, Math.floor(RENDER_SIZE * aspect));
+        canvas.width = Math.floor(RENDER_SIZE * aspect);
       }
       gl.viewport(0, 0, canvas.width, canvas.height);
     };
