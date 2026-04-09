@@ -136,15 +136,15 @@ vec3 traceRay(vec3 rayOrigin, vec3 rayDirection) {
   float opacity = 0.0;
   vec3 position = rayOrigin;
   vec3 velocity = rayDirection;
-  float dt = 0.1 * rs;
-  const int MAX_STEPS = 500;
-  float maxDistance = 100.0 * rs;
+  float dt = 0.3 * rs;
+  const int MAX_STEPS = 400;
+  float maxDistance = 120.0 * rs;
   float totalDistance = 0.0;
   vec3 totalGlow = vec3(0.0);
   for (int i = 0; i < MAX_STEPS; i++) {
     float r = length(position);
     if (r < rs * 1.01) return mix(totalGlow, vec3(0.0), 0.8);
-    vec3 glow = diskGlow(position, 0.01);
+    vec3 glow = diskGlow(position, 0.015);
     totalGlow += glow * (1.0 - opacity);
     vec4 diskColor = accretionDiskColor(position, velocity);
     if (diskColor.a > 0.01) {
@@ -152,14 +152,11 @@ vec3 traceRay(vec3 rayOrigin, vec3 rayDirection) {
       opacity += diskColor.a * (1.0 - opacity);
       if (opacity > 0.95) break;
     }
-    vec3 direction = normalize(position);
-    float forceMagnitude = rs / (r * r);
-    vec3 acceleration = -direction * forceMagnitude;
-    vec3 k1 = acceleration * dt;
-    vec3 k2 = acceleration * (1.0 + 0.5 * dt) * dt;
-    vec3 k3 = acceleration * (1.0 + 0.5 * dt) * dt;
-    vec3 k4 = acceleration * (1.0 + dt) * dt;
-    velocity += (k1 + 2.0 * k2 + 2.0 * k3 + k4) / 6.0;
+    // Proper gravitational deflection (Verlet-style)
+    vec3 dir = normalize(position);
+    float forceMag = 1.5 * rs / (r * r);
+    vec3 acc = -dir * forceMag;
+    velocity += acc * dt;
     velocity = normalize(velocity);
     position += velocity * dt;
     totalDistance += dt;
