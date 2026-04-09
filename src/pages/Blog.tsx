@@ -18,8 +18,18 @@ import bioAmazon2 from "@/assets/bio_amazon_2.png";
 import bioAmazon3 from "@/assets/bio_amazon_3.png";
 import bioKunst1 from "@/assets/bio_kunst_1.png";
 import bioKunst2 from "@/assets/bio_kunst_2.png";
+import bioKunst3 from "@/assets/bio_kunst_3.png";
+import bioKunst4 from "@/assets/bio_kunst_4.png";
+import bioKunst5 from "@/assets/bio_kunst_5.png";
+import bioKunst6 from "@/assets/bio_kunst_6.png";
+import bioKunst7 from "@/assets/bio_kunst_7.png";
 import bioArt1 from "@/assets/bio_art_1.jpg";
 import bioArt2 from "@/assets/bio_art_2.jpg";
+import bioArt3 from "@/assets/bio_art_3.png";
+import bioArt4 from "@/assets/bio_art_4.jpg";
+import bioArt5 from "@/assets/bio_art_5.jpg";
+import bioArt6 from "@/assets/bio_art_6.jpg";
+import bioArt7 from "@/assets/bio_art_7.jpg";
 import bioBirthday from "@/assets/bio_birthday.jpg";
 import bioRussia from "@/assets/bio_russia.jpg";
 import bioPhdnet1 from "@/assets/bio_phdnet_1.jpg";
@@ -106,7 +116,7 @@ It is better imperfectly finished, than perfectly unfinished. The opportunity to
     excerpt: "A gallery of sketches and paintings — exploring the question of what is and isn't art.",
     thumbnail: bioKunst1,
     content: `A gallery of sketches and paintings — exploring the question of what is and isn't art.`,
-    images: [bioKunst1, bioKunst2],
+    images: [bioKunst1, bioKunst2, bioKunst3, bioKunst4, bioKunst5, bioKunst6, bioKunst7],
   },
   {
     title: "What is not art?",
@@ -114,7 +124,7 @@ It is better imperfectly finished, than perfectly unfinished. The opportunity to
     excerpt: "A collection of photographs and artworks questioning the boundaries of artistic expression.",
     thumbnail: bioArt1,
     content: `A collection of photographs and artworks questioning the boundaries of artistic expression.`,
-    images: [bioArt1, bioArt2],
+    images: [bioArt1, bioArt2, bioArt3, bioArt4, bioArt5, bioArt6, bioArt7],
   },
   {
     title: "25th anniversary — The year I spent my birthday giving classes of physics to master students in Bochum",
