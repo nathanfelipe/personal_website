@@ -38,7 +38,7 @@ const talks = [
 A key component of my work involves utilizing the NIFTy package (https://pypi.org/project/nifty8/), a versatile tool designed for the efficient application of IFT to a variety of scientific problems. In the context of neutrino astronomy, NIFTy allows for robust signal inference by modeling uncertainties and correlations in the data, leading to improved reconstructions of neutrino source distributions. During the presentation, I demonstrated how NIFTy aids in processing IceCube data and enhances our understanding of cosmic neutrino sources by leveraging Bayesian inference techniques. This approach not only refines our observational analysis but also paves the way for future advancements in multi-messenger astrophysics.
 
 I would like to extend my sincere gratitude to the Umweltforschungsstation Schneefernerhaus for hosting this event and providing such an exceptional venue for scientific exchange. I am also deeply thankful to the group from the Max Planck Institute for Astrophysics for their kind invitation and the opportunity to present my work. Their insightful discussions and valuable feedback have greatly contributed to the ongoing development of my research on Information Field Theory and its application to high-energy neutrino and space physics observations.`,
-    images: [talkIft1, talkIft2],
+    images: [talkIft1, talkIft2, talkNeutrino1, talkNeutrino2, talkNeutrino3],
   },
   {
     title: "15th International Symposium for Space Simulations (ISSS-15) & IPELS-16",
@@ -47,7 +47,7 @@ I would like to extend my sincere gratitude to the Umweltforschungsstation Schne
       "Presenting Alis Helios, a tool providing GUI-based analysis of astrophysical and space science data.",
     thumbnail: talkIsss,
     content: `During the ISSS-15, I presented the first update on a code I have been developing for the past 4 months. Alis Helios is an ongoing project that provides tools and a graphical user interface (GUI) to analyze astrophysical and space science data, supporting various computational functionalities such as orbit calculations, power spectral density analysis, and data visualization.`,
-    images: [talkIsss],
+    images: [talkIsss, talkIsss2],
   },
   {
     title: "Transalpine Workshop on Magnetic Reconnection and Turbulence in Space and Fusion Plasmas",
@@ -56,7 +56,7 @@ I would like to extend my sincere gratitude to the Umweltforschungsstation Schne
       "Communicating recent results on magnetic reconnection and turbulence in space and fusion plasmas.",
     thumbnail: talkTransalpine,
     content: `The aim of the mini-workshop was to communicate recent results on topics of common interest (such as: "Plasmas, Théorie et Modélisation", "Turbulence Fluides et Plasmas") active in the study of magnetic reconnection and turbulence in space and fusion plasmas.`,
-    images: [talkTransalpine],
+    images: [talkTransalpine, talkTransalpine2],
   },
   {
     title: "2023 American Physical Society Annual Meeting, Division of Plasma Physics",
@@ -65,7 +65,7 @@ I would like to extend my sincere gratitude to the Umweltforschungsstation Schne
       "Talk at the APS DPP annual meeting on plasma astrophysics research.",
     thumbnail: talkAps,
     content: `Presentation at the 2023 American Physical Society annual meeting, Division of Plasma Physics.`,
-    images: [talkAps],
+    images: [talkAps, talkAps2],
   },
   {
     title: "Wissenschaftszeitvertragsgesetz — Science Policy Engagement",
@@ -96,7 +96,7 @@ I would like to extend my sincere gratitude to the Umweltforschungsstation Schne
 At the N2 conference, I worked as the coordinator of the programme committee and also as the moderator of the second panel discussion. This experience helped me to understand how important it is to develop skills related to Project Management in the context of an academic career. Furthermore, working with the amazing N2 team was one of the best experiences I had this year. I look forward to be able to have a greater impact on society, beyond the scope of my scientific work.
 
 During the same year I worked as co-coordinator of the Munich hub of PhD representatives of the Max Planck Society. This experience further helped me to develop a solid leadership profile, rooted in throughout communication with my peers, and proper delegation of tasks according to strengths and proactiveness.`,
-    images: [talkN2],
+    images: [talkN2, talkN2_2, talkN2_3],
   },
   {
     title: "Talk at Princeton Plasma Physics Laboratory Graduate Summer School",
@@ -114,7 +114,7 @@ During the same year I worked as co-coordinator of the Munich hub of PhD represe
       "A relaxed atmosphere where young researchers practice giving engaging scientific talks.",
     thumbnail: talkScienceSlam,
     content: `"Scientists need to be able to clearly and precisely communicate their findings in order to advance their personal careers, advance the scientific knowledge, and advance public awareness to increase scientific support and help inform decision and policy makers. The Munich Science Slam is a relaxed and pleasant atmosphere where young early researchers practice giving engaging scientific talks."`,
-    images: [talkScienceSlam],
+    images: [talkScienceSlam, talkScienceSlam2, talkScienceSlam3],
     link: "https://www.youtube.com/watch?v=nkE0jig5nb0",
   },
   {
