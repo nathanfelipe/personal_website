@@ -143,8 +143,8 @@ vec3 traceRay(vec3 rayOrigin, vec3 rayDirection) {
   float opacity = 0.0;
   vec3 position = rayOrigin;
   vec3 velocity = normalize(rayDirection);
-  float dt = 0.5 * rs;
-  const int MAX_STEPS = 200;
+  float dt = 0.375 * rs;
+  const int MAX_STEPS = 275;
   float maxDistance = 200.0 * rs;
   float totalDistance = 0.0;
   vec3 totalGlow = vec3(0.0);
@@ -286,7 +286,7 @@ const BlackHole = () => {
     const posLoc = gl.getAttribLocation(program, "aVertexPosition");
 
     // Render at half resolution for performance
-    const RENDER_SCALE = 0.5;
+    const RENDER_SCALE = 0.75;
 
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
