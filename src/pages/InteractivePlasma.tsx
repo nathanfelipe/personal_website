@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
 
 const visualizations = [
   {
@@ -22,22 +21,7 @@ const visualizations = [
 
 const InteractivePlasma = () => {
   return (
-    <div className="flex flex-col items-center text-center px-6 max-w-3xl">
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
-        className="self-start mb-10"
-      >
-        <Link
-          to="/"
-          className="flex items-center gap-2 text-white/40 hover:text-white/80 text-xs tracking-wide uppercase transition-colors"
-        >
-          <ArrowLeft size={14} />
-          Back
-        </Link>
-      </motion.div>
-
+    <div className="flex flex-col items-center text-center px-6 max-w-3xl mx-auto">
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -51,7 +35,7 @@ const InteractivePlasma = () => {
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-xs md:text-sm tracking-[0.15em] uppercase text-white/50 mb-12"
+        className="text-xs md:text-sm tracking-[0.15em] uppercase text-white/50 mb-8"
       >
         GPU-powered plasma visualizations
       </motion.p>
@@ -60,10 +44,10 @@ const InteractivePlasma = () => {
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="w-full max-w-md h-px bg-white/30 mb-12"
+        className="w-full max-w-xs h-px bg-white/30 mb-8"
       />
 
-      <div className="grid gap-6 w-full max-w-lg">
+      <div className="grid gap-5 w-full max-w-lg">
         {visualizations.map((item, i) => (
           <motion.div
             key={item.to}
@@ -73,9 +57,9 @@ const InteractivePlasma = () => {
           >
             <Link
               to={item.to}
-              className="block border border-white/20 rounded-2xl px-8 py-6 text-left hover:bg-white/5 hover:border-white/40 transition-all duration-300 group"
+              className="block border border-white/20 rounded-2xl px-8 py-5 text-left hover:bg-white/5 hover:border-white/40 transition-all duration-300 group"
             >
-              <h2 className="text-sm md:text-base font-serif tracking-[0.15em] uppercase text-white/90 group-hover:text-white mb-2">
+              <h2 className="text-sm md:text-base font-serif tracking-[0.15em] uppercase text-white/90 group-hover:text-white mb-1.5">
                 {item.label}
               </h2>
               <p className="text-[11px] md:text-xs tracking-wide text-white/40 group-hover:text-white/60 transition-colors">
