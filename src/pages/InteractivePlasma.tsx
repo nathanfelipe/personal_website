@@ -5,73 +5,64 @@ const visualizations = [
   {
     to: "/interactive-plasma/blackhole",
     label: "Black Hole",
+    date: "Astrophysics",
     description: "Schwarzschild black hole with accretion disk and gravitational lensing",
   },
   {
     to: "/interactive-plasma/heliophysics",
     label: "Heliophysics",
+    date: "Space Physics",
     description: "Solar wind and magnetospheric plasma dynamics",
   },
   {
     to: "/interactive-plasma/nuclear-fusion",
     label: "Nuclear Fusion",
+    date: "Laboratory Plasma",
     description: "Tokamak plasma confinement and fusion reactions",
-  },
-  {
-    to: "/interactive-plasma/test",
-    label: "Test Dummy",
-    description: "Temporary placeholder to test scrolling behavior",
   },
 ];
 
+const fadeIn = {
+  hidden: { opacity: 0, y: 15 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.4 },
+  }),
+};
+
 const InteractivePlasma = () => {
   return (
-    <div className="flex flex-col items-center text-center px-6 max-w-3xl mx-auto">
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-2xl md:text-3xl font-serif tracking-[0.12em] uppercase text-white mb-4"
-      >
-        Interactive Plasma
-      </motion.h1>
+    <div className="px-8 md:px-12 py-12 md:py-16 h-full overflow-y-auto relative">
+      <div className="space-y-3 mb-12">
+        <p className="text-xs tracking-[0.3em] uppercase text-white/50">Interactive Plasma</p>
+        <div className="w-12 h-px bg-white/30" />
+        <h1 className="text-3xl md:text-4xl font-serif text-white">
+          GPU-powered plasma visualizations
+        </h1>
+      </div>
 
-      <motion.p
-        initial={{ opacity: 0, y: 15 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-xs md:text-sm tracking-[0.15em] uppercase text-white/50 mb-8"
-      >
-        GPU-powered plasma visualizations
-      </motion.p>
-
-      <motion.div
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="w-full max-w-xs h-px bg-white/30 mb-8"
-      />
-
-      <div className="grid gap-5 w-full max-w-lg">
+      <div className="space-y-0 divide-y divide-white/10">
         {visualizations.map((item, i) => (
-          <motion.div
+          <motion.article
             key={item.to}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 + i * 0.15 }}
+            custom={i}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="py-8 first:pt-0 last:pb-0"
           >
-            <Link
-              to={item.to}
-              className="block border border-white/20 rounded-2xl px-8 py-5 text-left hover:bg-white/5 hover:border-white/40 transition-all duration-300 group"
-            >
-              <h2 className="text-sm md:text-base font-serif tracking-[0.15em] uppercase text-white/90 group-hover:text-white mb-1.5">
-                {item.label}
-              </h2>
-              <p className="text-[11px] md:text-xs tracking-wide text-white/40 group-hover:text-white/60 transition-colors">
-                {item.description}
-              </p>
+            <Link to={item.to} className="block max-w-2xl group">
+              <div className="space-y-2">
+                <time className="text-[10px] text-white/40 tracking-wide uppercase">{item.date}</time>
+                <h2 className="text-xl md:text-2xl font-serif text-white group-hover:text-white/70 transition-colors">
+                  {item.label}
+                </h2>
+                <p className="text-sm text-white/60 leading-relaxed">{item.description}</p>
+              </div>
             </Link>
-          </motion.div>
+          </motion.article>
         ))}
       </div>
     </div>
