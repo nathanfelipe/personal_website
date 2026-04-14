@@ -292,14 +292,23 @@ const Blog = () => {
             </div>
 
             {posts[selectedPost].link && (
-              <a
-                href={posts[selectedPost].link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-6 text-xs text-white/50 hover:text-white/80 tracking-wide transition-colors"
-              >
-                External link →
-              </a>
+              posts[selectedPost].isInternal ? (
+                <Link
+                  to={posts[selectedPost].link!}
+                  className="inline-block mt-6 text-xs text-white/50 hover:text-white/80 tracking-wide transition-colors"
+                >
+                  View interactive map →
+                </Link>
+              ) : (
+                <a
+                  href={posts[selectedPost].link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-6 text-xs text-white/50 hover:text-white/80 tracking-wide transition-colors"
+                >
+                  External link →
+                </a>
+              )
             )}
           </motion.div>
         )}
