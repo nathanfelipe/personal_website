@@ -12,6 +12,7 @@ import Blog from "./pages/Blog";
 import Talks from "./pages/Talks";
 import Contact from "./pages/Contact";
 import BlackHole from "./pages/BlackHole";
+import InteractivePlasma from "./pages/InteractivePlasma";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,7 +32,8 @@ const App = () => (
               <Route path="/talks" element={<Talks />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/blackhole" element={<BlackHole />} />
+              <Route path="/interactive-plasma" element={<InteractivePlasma />} />
+              <Route path="/interactive-plasma/blackhole" element={<BlackHole />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>

@@ -370,7 +370,7 @@ const BlackHole = () => {
       />
 
       <Link
-        to="/"
+        to="/interactive-plasma"
         className="absolute top-6 left-6 flex items-center gap-2 text-white/40 hover:text-white/80 text-xs tracking-wide uppercase transition-colors z-10"
       >
         <ArrowLeft size={14} />
