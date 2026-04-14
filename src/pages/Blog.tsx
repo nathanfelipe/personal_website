@@ -173,6 +173,8 @@ It is better imperfectly finished, than perfectly unfinished. The opportunity to
     date: "July 2018",
     excerpt: '"One\'s destination is never a place, but always a new way of seeing things." — Henry Miller',
     thumbnail: profileImg,
+    link: "/visited-countries",
+    isInternal: true,
     content: `"One's destination is never a place, but always a new way of seeing things." — Henry Miller`,
     images: [],
   },
