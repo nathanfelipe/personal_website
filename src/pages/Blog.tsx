@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Lightbox from "@/components/Lightbox";
 import profileImg from "@/assets/profile.jpg";
@@ -173,6 +174,8 @@ It is better imperfectly finished, than perfectly unfinished. The opportunity to
     date: "July 2018",
     excerpt: '"One\'s destination is never a place, but always a new way of seeing things." — Henry Miller',
     thumbnail: profileImg,
+    link: "/visited-countries",
+    isInternal: true,
     content: `"One's destination is never a place, but always a new way of seeing things." — Henry Miller`,
     images: [],
   },
@@ -290,14 +293,23 @@ const Blog = () => {
             </div>
 
             {posts[selectedPost].link && (
-              <a
-                href={posts[selectedPost].link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-6 text-xs text-white/50 hover:text-white/80 tracking-wide transition-colors"
-              >
-                External link →
-              </a>
+              posts[selectedPost].isInternal ? (
+                <Link
+                  to={posts[selectedPost].link!}
+                  className="inline-block mt-6 text-xs text-white/50 hover:text-white/80 tracking-wide transition-colors"
+                >
+                  View interactive map →
+                </Link>
+              ) : (
+                <a
+                  href={posts[selectedPost].link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-6 text-xs text-white/50 hover:text-white/80 tracking-wide transition-colors"
+                >
+                  External link →
+                </a>
+              )
             )}
           </motion.div>
         )}

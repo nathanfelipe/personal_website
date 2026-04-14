@@ -13,6 +13,7 @@ import Talks from "./pages/Talks";
 import Contact from "./pages/Contact";
 import BlackHole from "./pages/BlackHole";
 import InteractivePlasma from "./pages/InteractivePlasma";
+import VisitedCountries from "./pages/VisitedCountries";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/interactive-plasma" element={<InteractivePlasma />} />
               <Route path="/interactive-plasma/blackhole" element={<BlackHole />} />
+              <Route path="/visited-countries" element={<VisitedCountries />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
