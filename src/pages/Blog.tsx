@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Lightbox from "@/components/Lightbox";
 import profileImg from "@/assets/profile.jpg";
