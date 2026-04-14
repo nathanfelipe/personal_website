@@ -17,6 +17,11 @@ const visualizations = [
     label: "Nuclear Fusion",
     description: "Tokamak plasma confinement and fusion reactions",
   },
+  {
+    to: "/interactive-plasma/test",
+    label: "Test Dummy",
+    description: "Temporary placeholder to test scrolling behavior",
+  },
 ];
 
 const InteractivePlasma = () => {
