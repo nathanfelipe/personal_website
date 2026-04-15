@@ -12,7 +12,7 @@ import Blog from "./pages/Blog";
 import Talks from "./pages/Talks";
 import Contact from "./pages/Contact";
 import BlackHole from "./pages/BlackHole";
-import Heliophysics from "./pages/Heliophysics";
+
 import InteractivePlasma from "./pages/InteractivePlasma";
 import VisitedCountries from "./pages/VisitedCountries";
 import NotFound from "./pages/NotFound";
@@ -36,7 +36,7 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/interactive-plasma" element={<InteractivePlasma />} />
               <Route path="/interactive-plasma/blackhole" element={<BlackHole />} />
-              <Route path="/interactive-plasma/heliophysics" element={<Heliophysics />} />
+              
               <Route path="/visited-countries" element={<VisitedCountries />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
