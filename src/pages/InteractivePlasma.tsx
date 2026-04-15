@@ -12,13 +12,13 @@ const visualizations = [
     to: "/interactive-plasma/heliophysics",
     label: "Heliophysics",
     date: "Space Physics",
-    description: "Solar wind and magnetospheric plasma dynamics",
+    description: "Solar wind and magnetospheric plasma dynamics (under construction...)",
   },
   {
     to: "/interactive-plasma/nuclear-fusion",
     label: "Nuclear Fusion",
     date: "Laboratory Plasma",
-    description: "Tokamak plasma confinement and fusion reactions",
+    description: "Tokamak plasma confinement and fusion reactions (under construction...)",
   },
 ];
 
@@ -37,8 +37,8 @@ const InteractivePlasma = () => {
       <div className="space-y-3 mb-12">
         <p className="text-xs tracking-[0.3em] uppercase text-white/50">Interactive Plasma</p>
         <div className="w-12 h-px bg-white/30" />
-        <h1 className="text-3xl md:text-4xl font-serif text-white">
-          GPU-powered plasma visualizations
+        <h1 className="text-2xl md:text-4xl font-serif text-white">
+          GPU-powered plasma visualizations (not optmzd for phones)
         </h1>
       </div>
 
