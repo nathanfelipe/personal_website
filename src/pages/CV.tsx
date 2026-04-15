@@ -18,7 +18,7 @@ const experience = [
     title: "Wissenschaftlicher Mitarbeiter (Doktorand und Postdoktorand)",
     org: "Max-Planck-Institut für Plasmaphysik (IPP)",
     items: [
-      "The goal of my PostDoc is to numerically implement the theoretical framework I developed during the Ph.D. Additionally, we analyse in-situ satellite data to assess the model's accuracy and predictive capabilities. Ultimately, the research's goal is to understand the influence of turbulence on particle acceleration and heating in space and high energy astrophysical plasmas, which is to date an open question in astro- and space physics.",
+      "The goal of my postdoctoral research is to numerically implement the theoretical framework I developed during the Ph.D. Additionally, we analyse in-situ satellite data to assess the model's accuracy and predictive capabilities. Ultimately, the goal of the research is to understand the influence of turbulence on particle acceleration and heating in space and high energy astrophysical plasmas, which is to date an open question in astro- and space physics.",
       "My Ph.D. research centered on devising a theoretical framework grounded in Hamiltonian field theory and symplectic geometry. This framework sought to establish a reduced physical kinetic approach that, when combined with field equations, could effectively model turbulence in nuclear fusion devices and astrophysical plasmas.",
     ],
   },
@@ -38,7 +38,7 @@ const experience = [
     title: "Intern",
     org: "University of Brasília Plasma Physics Laboratory",
     items: [
-      "Development of Technologies linked with Plasma Physics including: Energy Analyser, Emissive Probes, Langmuir Probes et cetera.",
+      "Development of Technologies linked with Plasma Physics including: Energy Analyser, Emissive Probes, Langmuir Probes, and others.",
     ],
   },
   {
@@ -47,7 +47,7 @@ const experience = [
     title: "Intern",
     org: "Brazilian Space Agency",
     items: [
-      "At the Brazilian Space Agency, I had contact with professionals worldwide, working in partnership with another countries, gathering informations about the CanSat competition, and further implementing it in Brazil at a university competition of micro-satellites. Furthermore I supported the built up a prototype for the Agency.",
+      "At the Brazilian Space Agency, I had contact with professionals worldwide, working in partnership with other countries, gathering informations about the CanSat competition, and further implementing it in Brazil at a university competition of micro-satellites. Furthermore, I supported the built up a prototype for the Agency.",
     ],
   },
 ];
