@@ -11,7 +11,7 @@ const Research = () => {
             This position is part of the FWO-funded project Helioskill: Heliophysics Simulations & Artificial
             Intelligence, which targets a yet unsolved problem in space and astrophysics: how energy is dissipated in
             virtually collisionless astrophysical plasmas. The research combines high-resolution kinetic simulations
-            with in-situ spacecraft observations. It involves unsupervised clustering, and sparse identification of
+            with in-situ spacecraft observations. It involves unsupervised clustering and sparse identification of
             nonlinear dynamics, among other machine learning techniques. The work is conducted at the Centre for
             Mathematical Plasma Astrophysics (CmPA) within the Department of Mathematics at KU Leuven.
           </p>
@@ -45,11 +45,8 @@ const Research = () => {
           <section className="space-y-4">
             <h2 className="text-2xl font-serif text-foreground">Background</h2>
             <p className="text-muted-foreground leading-relaxed">
-              I hold a M.Sc. in Theoretical Physics from the University of Brasília in Brazil, and an M.Eng. in Nuclear
-              Sciences from the Polytechnic University of Catalonia in Spain, while an intern at the Barcelona
-              Supercomputing Center, where I worked with turbulence stabilisation via fast ions in controlled
-              thermonuclear fusion. Furthermore, I have a Ph.D. in Physics from the Ruhr-Universität Bochum in Germany,
-              while at the same time I worked at the Max Planck Institute for Plasma Physics in Munich. During tha time,
+              I hold an M.Sc. in Theoretical Physics from the University of Brasília in Brazil, and an M.Eng. in Nuclear Sciences from the Polytechnic University of Catalonia in Spain. I was also an intern at the Barcelona Supercomputing Center, where I worked with turbulence stabilisation via fast ions in controlled thermonuclear fusion. Furthermore, I have a Ph.D. in Physics from the Ruhr-Universität Bochum in Germany,
+              while at the same time I worked at the Max Planck Institute for Plasma Physics in Munich. During that time,
               I extended a symplectic (differential geometrical) formulation of hamiltonian field theory to the
               modelling of reduced (gyro)kinetic turbulence in astrophysical and space plasmas.
             </p>
